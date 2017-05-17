@@ -1,13 +1,15 @@
-name: ZixuanZ
+# Site Settings
+#url: "https://zixuanz.github.io"
+#baseurl:
 
-github:
-  url: http://localhost:4000
-  
+#github:
+#  url: http://localhost:4000
+
 # Dependencies
 markdown:    kramdown
 highlighter: pygments
 
-# Blog Setup
+# Blog Settings
 permalink: /blog/:year/:month/:day/:title
 
 gems: [jekyll-paginate]

@@ -21,6 +21,9 @@
   <link ref="stylesheet" href="{{ site.github.url }}/assets/css/page_index.css">
   -->
   <style>
+  body{
+    font-family: 'Raleway', sans-serif;
+  }
 
   .jumbotron{
     margin: 0px;
@@ -38,27 +41,13 @@
   }
 
   .intro-box{
-    margin: 2px;
-    padding-left: 2%;
     border-left: solid 2px black;
   }
 
   .intro-box > p{
     margin: 2px;
-    font-family: 'Raleway', sans-serif;
   }
 
-  .social-icon{
-    width: 35px;
-  }
-
-  .divider{
-    margin-top: 0;
-    margin-bottom: 5%;
-    padding: 1px;
-    background-color: black;
-    display: block;
-  }
 
   .navbar-outline{
     margin: 0;
@@ -74,12 +63,28 @@
 
   ul.navbar-nav a{
     color: white;
-    font-family: 'Raleway', sans-serif;
   }
 
   ul.navbar-nav a:hover{
     color: gray;
-    font-family: 'Raleway', sans-serif;
+  }
+
+  .divider{
+    margin-top: 0;
+    margin-bottom: 5%;
+    padding: 1px;
+    background-color: black;
+    display: block;
+  }
+
+  .about{
+    border: double black;
+    border-radius: 3px;
+  }
+
+  .blog-space{
+    padding-left: 3%;
+    padding-right: 3%;
   }
 
   </style>
@@ -89,7 +94,7 @@
 <body>
 
   <!--Navbar Collapse Button-->
-  <nav class="navbar navbar-toggleable-sm">
+  <nav class="navbar navbar-light navbar-toggleable-sm">
     <button class="navbar-toggler navbar-toggler-right navbar-text" type="button" data-toggle="collapse" data-target="#navbar_menu" aria-controls="#navbar_menu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -98,13 +103,11 @@
   <!--Section Jumbotron-->
   <div class="jumbotron">
     <div class="d-flex flex-row align-items-center">
-      <img class="avatar-md m-2" src="https://avatars3.githubusercontent.com/u/6519274?v=3&s=400">
-      <div class="intro-box m-4">
+      <img class="avatar-md m-2 img-thumbnail" src="https://avatars3.githubusercontent.com/u/6519274?v=3&s=400">
+      <div class="intro-box m-3 p-4">
         <p>Zixuan Z</p>
         <p>Web Android</p>
-        <a href="https://github.com/zixuanz">
-          <img class="social-icon rounded-circle" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt="Github Account">
-        </a>
+        {% include social_links.html %}
       </div>
     </div>
   </div>
@@ -125,10 +128,16 @@
   <!--Section Latest Activity on Left and Userinfo on Right-->
   <div class="container-fluid">
     <div class="row">
-      
+      <div class="col-md-8 blog-space">
+        {% include post_list.html %}
+      </div>
       <!--SubSection General About-->
       <div class="col-md-4 text-center">
-
+        <article class="about m-5 p-3">
+          <h5>About Me</h5>
+          <p>Hello!!</p>
+          {% include social_links.html %}
+        </article>
       </div>
     </div>
   </div>

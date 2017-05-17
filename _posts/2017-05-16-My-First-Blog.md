@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "My First Blog"
-categories: web
+category: web
 date: 2017-05-16 23:42:48 -0700
 tags: [github page, jekyll]
 ---

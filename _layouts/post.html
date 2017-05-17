@@ -13,16 +13,31 @@
   <!--Fonts Links-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <style>
+  body{
+    font-family: 'Raleway', sans-serif;
+  }
+
+
+  </style>
 </head>
+
 <html>
   <body>
     {% include navbar.html %}
 
     <div>
+      <article class="p-5">
+        <h3>{{ page.title }}</h3>
+        <p>Post Time: {{ page.date | date: '%a, %b %-d, %Y %R' }}</p>
+        <p>Category: <a href="#">{{ page.category }}</a></p>
+        <div>
+        {{ content }}
+        </div>
+      </article>
     </div>
-    
-    <div>
-    {{ content }}
-    </div>
+
+
   </body>
 </html>

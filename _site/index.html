@@ -7,49 +7,278 @@
   <!-- Required meta tags for bootstrap -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- bootstrap CSS -->
+  <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <!--Fonts Links-->
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!--Customized CSS
+  <link ref="stylesheet" href="/assets/css/page_index.css">
+  -->
+  <style>
+  body{
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .jumbotron{
+    margin: 0px;
+    padding-bottom: 0;
+    background-color: white;
+  }
+
+  .flex-row{
+    margin-left: 10%;
+  }
+
+  .avatar-md{
+    width: 100px;
+    height: 100px;
+  }
+
+  .intro-box{
+    border-left: solid 2px black;
+  }
+
+  .intro-box > p{
+    margin: 2px;
+  }
+
+
+  .navbar-outline{
+    margin: 0;
+    padding: 0 5% 0 0;
+  }
+
+  .navbar-non-collapse{
+    margin: 0;
+    padding: 2px 2% 2px 2%;
+    background-color: black;
+    border-radius: 25px 25px 0 0;
+  }
+
+  ul.navbar-nav a{
+    color: white;
+  }
+
+  ul.navbar-nav a:hover{
+    color: gray;
+  }
+
+  .divider{
+    margin-top: 0;
+    margin-bottom: 5%;
+    padding: 1px;
+    background-color: black;
+    display: block;
+  }
+
+  .about{
+    border: double black;
+    border-radius: 3px;
+  }
+
+  .blog-space{
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+  </style>
 </head>
 
 <html>
 <body>
-  <!--Section Navbar-->
-  <nav class="navbar navbar-light navbar-toggleable-md fixed-top">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar_menu" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <h1 class="navbar-brand mr-auto">ZixuanZ</h1>
-  <div class="collapse navbar-collapse" id="navbar_menu">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">Projects</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">Blogs</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-    </ul>
-  </div>
-</nav>
+
+  <!--Navbar Collapse Button-->
+  <nav class="navbar navbar-light navbar-toggleable-sm">
+    <button class="navbar-toggler navbar-toggler-right navbar-text" type="button" data-toggle="collapse" data-target="#navbar_menu" aria-controls="navbar_menu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
 
   <!--Section Jumbotron-->
   <div class="jumbotron">
-    <h1>Hello, World</h1>
+    <div class="d-flex flex-row align-items-center">
+      <img class="avatar-md m-2 img-thumbnail" src="https://avatars3.githubusercontent.com/u/6519274?v=3&s=400">
+      <div class="intro-box m-3 p-4">
+        <p>Zixuan Z</p>
+        <p>Web Android</p>
+        <style>
+.social-icon{
+  width: 35px;
+}
+
+</style>
+
+<div>
+  <a href="https://github.com/zixuanz">
+    <img class="social-icon rounded-circle" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt="Github Account">
+  </a>
+</div>
+
+      </div>
+    </div>
   </div>
+
+  <!--Section Navbar-->
+  <nav class="navbar navbar-toggleable-sm navbar-outline">
+    <div class="collapse navbar-collapse" id="navbar_menu">
+      <ul class="navbar-nav ml-auto navbar-non-collapse">
+        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Blogs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="divider"></div>
+
   <!--Section Latest Activity on Left and Userinfo on Right-->
   <div class="container-fluid">
     <div class="row">
-      <!--SubSection Acitivity-->
-      
-      <!--SubSection Userinfo-->
+      <div class="col-md-8 blog-space">
+        
+<style>
+  .post-box{
+    margin: 2% 2% 2% 0;
+    padding: 2%;
+    border-left: double black;
+  }
+
+  .date-outbox{
+    margin-right: 0;
+    padding-right: 0;
+    padding-top: 5%;
+  }
+
+  .date-box{
+    margin: 0;
+    border-top: double black;
+    border-left: double black;
+    border-bottom: double black;
+  }
+
+  .date-box > p{
+    margin: 2px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .arrow-left{
+    padding-left: 20%;
+  }
+
+  .arrow-right{
+    padding-right: 20%;
+  }
+
+</style>
+
+
+<!-- Pagination links -->
+<div class="pagination">
+
+  <!--Previous Page-->
+  <div class="mr-auto arrow-left">
+  
+    <i class="material-icons">keyboard_arrow_left</i>
+  
+  </div>
+
+  <!--Current Page NO. of Total-->
+  <span class="md-auto">Page: 1 of 1</span>
+
+  <!--Next Page-->
+  <div class="ml-auto arrow-right">
+  
+    <i class="material-icons">keyboard_arrow_right</i>
+  
+  </div>
+</div>
+
+
+<!-- This loops through the paginated posts -->
+
+  <div class="d-flex flex-row">
+
+    <!--Section for Date-->
+    <div class="date-outbox">
+      <div class="date-box">
+        <p class="ml-auto">May 16</p>
+        <p class="ml-auto">2017</p>
+      </div>
+    </div>
+
+    <!--Section for Post Content-->
+    <div class="post-box">
+      <div>
+        <h4><a href="/blog/2017/05/16/My-First-Blog">My First Blog</a></h4>
+        <p>23:42</p>
+      </div>
+      <div class="content">
+        <p>I hope this is my last “First Blog”.</p>
+
+<p>Well, until right now, I temporally completed design of index page.</p>
+
+<p>I had a serious problem which is cannot include a css to html page correctly. I think that was caused by site.url settings. I could not get through it. Thus I decided just write into each pages. At least it was convenient for me to modify the style.</p>
+
+<p>What else I can do in index.html page:</p>
+<ul>
+  <li>The toggle button, which is for the collapsed navbar menu, will be modified to the similar style of webpage.</li>
+  <li>The collapsed menu is not good looking. I will try to have before-collapse and after-collapse design.</li>
+  <li>Navbar will be stick to top when scroll over it.</li>
+  <li>Create foot.html and include it in.</li>
+  <li>After all sections in index page are done, modify details such as how to show time.</li>
+</ul>
+
+<p>Next, I will start styling post.html and write more and more blogs used for testing!</p>
+
+      </div>
+    </div>
+  </div>
+
+
+<!-- Pagination links -->
+<div class="pagination">
+
+  <!--Previous Page-->
+  <div class="mr-auto arrow-left">
+  
+    <i class="material-icons">keyboard_arrow_left</i>
+  
+  </div>
+
+  <!--Current Page NO. of Total-->
+  <span class="md-auto">Page: 1 of 1</span>
+
+  <!--Next Page-->
+  <div class="ml-auto arrow-right">
+  
+    <i class="material-icons">keyboard_arrow_right</i>
+  
+  </div>
+</div>
+
+      </div>
+      <!--SubSection General About-->
       <div class="col-md-4 text-center">
-        <img>
-        <p>Username</p>
-        <p>description</p>
-        <div>
-          <ul>
-            <li>github</li>
-          </ul>
-        </div>
+        <article class="about m-5 p-3">
+          <h5>About Me</h5>
+          <p>Hello!!</p>
+          <style>
+.social-icon{
+  width: 35px;
+}
+
+</style>
+
+<div>
+  <a href="https://github.com/zixuanz">
+    <img class="social-icon rounded-circle" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt="Github Account">
+  </a>
+</div>
+
+        </article>
       </div>
     </div>
   </div>

@@ -7,7 +7,7 @@
 
 # Dependencies
 markdown:    kramdown
-highlighter: pygments
+highlighter: rouge
 
 # Blog Settings
 permalink: /blog/:year/:month/:day/:title

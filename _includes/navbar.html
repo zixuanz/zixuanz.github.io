@@ -1,10 +1,40 @@
-<nav class="navbar navbar-light navbar-toggleable-md fixed-top">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar_menu" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+<style>
+  .navbar-outline{
+    margin-top: 0;
+    padding: 0 5% 0 0;
+  }
+
+  .navbar-non-collapse{
+    margin: 0;
+    padding: 2px 2% 2px 2%;
+    background-color: black;
+    border-radius: 0 0 25px 25px;
+  }
+
+  ul.navbar-nav a{
+    color: white;
+  }
+
+  ul.navbar-nav a:hover{
+    color: gray;
+  }
+
+  .divider{
+    margin-top: 2%;
+    margin-bottom: 0;;
+    padding: 1px;
+    background-color: black;
+    display: block;
+  }
+</style>
+
+<div class="divider"></div>
+<nav class="navbar navbar-toggleable-sm navbar-outline sticky-top">
+  <button class="navbar-light navbar-toggler navbar-toggler-right navbar-text" type="button" data-toggle="collapse" data-target="#navbar_menu" aria-controls="navbar_menu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <h1 class="navbar-brand mr-auto">ZixuanZ</h1>
   <div class="collapse navbar-collapse" id="navbar_menu">
-    <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav ml-auto navbar-non-collapse">
       <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
       <li class="nav-item"><a href="#" class="nav-link">Projects</a></li>
       <li class="nav-item"><a href="#" class="nav-link">Blogs</a></li>

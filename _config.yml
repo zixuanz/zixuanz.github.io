@@ -1,6 +1,7 @@
 # Site Settings
 #url: "https://zixuanz.github.io"
 #baseurl:
+url: http://localhost:4000
 
 #github:
 #  url: http://localhost:4000

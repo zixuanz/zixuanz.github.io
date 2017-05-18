@@ -1,0 +1,80 @@
+---
+
+---
+
+<!DOCTYPE html>
+<head lang="en">
+  <title>Projects</title>
+  <meta name="author" content="zixuanz">
+  <meta name="description" content="My portfolio">
+
+  <!-- Required meta tags for bootstrap -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <!--Fonts Links-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <style>
+  body{
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .jumbotron{
+    background-color: white;
+    padding-left: 10%;
+  }
+
+  .card{
+    margin: 10%;
+  }
+
+  .card-img-top{
+    width: 100%;
+    height: 300px;
+  }
+  </style>
+</head>
+
+<html>
+<body>
+  <!--Section Navbar-->
+  {% include navbar.html %}
+
+  <!--Section Header Title-->
+  <div class="jumbotron">
+    <h1>Projects</h1>
+  </div>
+
+  <!--Section Blogs-->
+  <div class="container-fluid">
+    <div>
+      <div class="card-deck">
+        <div class="card">
+          <img class="card-img-top" src="https://github.com/zixuanz/Android-App----PlainTextReader/blob/master/Screen%20Shot%202017-04-26%20at%207.27.18%20PM.png?raw=true" alt="Plain Text Reader">
+          <div class="card-block">
+            <h4 class="card-title">Plain Text Reader App</h4>
+            <p class="card-text">An android application used to read txt file.</p>
+            <p><a href="https://github.com/zixuanz/Android-App----PlainTextReader">Source Code</a></p>
+            <p class="card-text ml-auto"><small class="text-muted">tags</small></p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="{{site.url}}/assets/img/Local_Weather_App_sm.png" alt="Card image cap">
+          <div class="card-block">
+            <h4 class="card-title">Local Weather App</h4>
+            <p class="card-text">A local weather app will show current weather status by your current location.</p>
+            <p><a href="https://codepen.io/zixuanz/full/QvvNje/">Source Code</a></p>
+            <p class="card-text"><small class="text-muted">tags</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Section Footer-->
+  {% include footer.html %}
+</body>
+</html>

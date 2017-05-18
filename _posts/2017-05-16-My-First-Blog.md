@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  "My First Blog"
-category: web
+category: Web
 date: 2017-05-16 23:42:48 -0700
-tags: [github page, jekyll]
+tags: [Github page, Jekyll]
 ---
 
 I hope this is my last "First Blog".

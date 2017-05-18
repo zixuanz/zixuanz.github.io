@@ -124,10 +124,10 @@
   <nav class="navbar navbar-toggleable-sm navbar-outline">
     <div class="collapse navbar-collapse" id="navbar_menu">
       <ul class="navbar-nav ml-auto navbar-non-collapse">
-        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Projects</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Blogs</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="http://localhost:4000/index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="http://localhost:4000/blogs.html" class="nav-link">Blogs</a></li>
+        <li class="nav-item"><a href="http://localhost:4000/projects.html" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a href="http://localhost:4000/about.html" class="nav-link">About</a></li>
       </ul>
     </div>
   </nav>
@@ -198,6 +198,37 @@
 
 
 <!-- This loops through the paginated posts -->
+
+  <div class="d-flex flex-row">
+
+    <!--Section for Date-->
+    <div class="date-outbox">
+      <div class="date-box">
+        <p class="ml-auto">May 17</p>
+        <p class="ml-auto">2017</p>
+      </div>
+    </div>
+
+    <!--Section for Post Content-->
+    <div class="post-box">
+      <div>
+        <h4><a href="/blog/2017/05/17/Google-IO-Event">Google I/O Event</a></h4>
+        <p>00:00</p>
+      </div>
+      <div class="content">
+        <p>I watched Google I/O Event live today. There are some interesting points. I will just summarize it by memory</p>
+<ul>
+  <li>Google Home</li>
+  <li>Android Go</li>
+  <li>Kotlin</li>
+</ul>
+
+<p>g.co/tpusignup
+g.co/InstantApps</p>
+
+      </div>
+    </div>
+  </div>
 
   <div class="d-flex flex-row">
 
@@ -282,6 +313,37 @@
       </div>
     </div>
   </div>
+
+  <style>
+.footer-divider{
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding: 1px;
+  background-color: black;
+  display: block;
+}
+</style>
+
+<div>
+  <div class="footer-divider"></div>
+  <div class="text-center">
+  <style>
+.social-icon{
+  width: 35px;
+}
+
+</style>
+
+<div>
+  <a href="https://github.com/zixuanz">
+    <img class="social-icon rounded-circle" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt="Github Account">
+  </a>
+</div>
+
+  <p>Copyright © ZixuanZ 2017 </p>
+</div>
+</div>
+
 
   <!-- jQuery first, then Tether, then Bootstrap JS. -->
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>

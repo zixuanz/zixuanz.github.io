@@ -16,10 +16,19 @@
   <!--Fonts Links-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <style>
   body{
     font-family: 'Raleway', sans-serif;
+  }
+  .jumbotron{
+    background-color: white;
+    padding-left: 10%;
+  }
+  .avatar-md{
+    width: 100px;
+    height: 100px;
   }
   </style>
 </head>
@@ -27,5 +36,17 @@
 <html>
 <body>
   {% include navbar.html %}
+
+  <div class="container-fluid">
+    <div>
+      <img class="avatar-md m-2 img-thumbnail" src="https://avatars3.githubusercontent.com/u/6519274?v=3&s=400">
+    </div>
+    <article>
+      Hello! I am Zixuan.
+    </article>
+  </div>
+
+  <!--Section Footer-->
+  {% include footer.html %}
 </body>
 </html>

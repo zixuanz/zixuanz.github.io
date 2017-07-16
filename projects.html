@@ -16,6 +16,7 @@
   <!--Fonts Links-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <style>
   body{
@@ -25,6 +26,26 @@
   .jumbotron{
     background-color: white;
     padding-left: 10%;
+  }
+
+  .tags-box{
+    border-top: double black;
+    border-bottom: double black;
+  }
+
+  .tags-box > div{
+    width: 120px;
+    border-left: double black;
+    border-right: double black;
+    display: inline-block;
+  }
+
+  .tags-box a{
+    color: black;
+  }
+
+  .tags-fa{
+    display: none;
   }
 
   .card{
@@ -47,6 +68,14 @@
   <div class="jumbotron">
     <h1>Projects</h1>
   </div>
+  <div class="tags-box text-center">
+    <div><i class="fa fa-caret-right tags-fa"></i><a href="#"> All </a><i class="fa fa-caret-left tags-fa"></i></div>
+    <div><i class="fa fa-caret-right tags-fa"></i><a href="#"> Android </a><i class="fa fa-caret-left tags-fa"></i></div>
+    <div><i class="fa fa-caret-right tags-fa"></i><a href="#"> Python </a><i class="fa fa-caret-left tags-fa"></i></div>
+    <div><i class="fa fa-caret-right tags-fa"></i><a href="#"> Web </a><i class="fa fa-caret-left tags-fa"></i></div>
+  </div>
+
+  {% include asidebar.html %}
 
   <!--Section Blogs-->
   <div class="container-fluid">
@@ -58,16 +87,16 @@
             <h4 class="card-title">Plain Text Reader App</h4>
             <p class="card-text">An android application used to read txt file.</p>
             <p><a href="https://github.com/zixuanz/Android-App----PlainTextReader">Source Code</a></p>
-            <p class="card-text ml-auto"><small class="text-muted">tags</small></p>
+            <p class="card-text ml-auto"><small class="text-muted">Android</small></p>
           </div>
         </div>
         <div class="card">
           <img class="card-img-top" src="{{site.url}}/assets/img/Local_Weather_App_sm.png" alt="Card image cap">
           <div class="card-block">
             <h4 class="card-title">Local Weather App</h4>
-            <p class="card-text">A local weather app will show current weather status by your current location.</p>
+            <p class="card-text">This local weather app will show current weather status by your current location.</p>
             <p><a href="https://codepen.io/zixuanz/full/QvvNje/">Source Code</a></p>
-            <p class="card-text"><small class="text-muted">tags</small></p>
+            <p class="card-text"><small class="text-muted">Web HTML5 JS CSS FreeCodeCamp</small></p>
           </div>
         </div>
       </div>
@@ -75,6 +104,22 @@
   </div>
 
   <!--Section Footer-->
-  {% include footer.html %}
+  <div>
+    <div class="footer-divider"></div>
+    <div class="text-center">
+    {% include social_links.html %}
+    <p>Copyright © ZixuanZ 2017 </p>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script>
+    $("document").ready(function(){
+      $(".tags-box div").hover(function(){
+          $(this).children("i").toggle();
+      })
+    })
+  </script>
 </body>
 </html>

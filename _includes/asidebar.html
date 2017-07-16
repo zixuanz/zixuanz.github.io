@@ -1,0 +1,38 @@
+<style>
+  .aside-out{
+    position:relative;
+    margin-top: 5%;
+  }
+
+  aside{
+    float: right;
+    width: 50px;
+  }
+
+  .aside-inner{
+    position: fixed;
+    font-size: 25px;
+    animation-name: goup;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes goup {
+      0%    {opacity: 0}
+      25%   {opacity: 0.5}
+      50%   {opacity: 1}
+      75%   {opacity: 0.5}
+      100%  {opacity: 0; -ms-transform: translate(0px, -10px);-webkit-transform: translate(0px, -10px);transform: translate(0px, -10px);}
+  }
+
+  .cursor{
+    cursor: pointer;
+  }
+
+</style>
+
+<div class="aside-out">
+<aside>
+  <div class="aside-inner"><i class="fa fa-angle-double-up"></i></div>
+</aside>
+</div>

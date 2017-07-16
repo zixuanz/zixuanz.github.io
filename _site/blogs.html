@@ -12,11 +12,23 @@
   <!--Fonts Links-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <style>
   body{
     font-family: 'Raleway', sans-serif;
   }
+
+  .jumbotron{
+    background-color: white;
+    padding-left: 10%;
+  }
+
+  .blog-space{
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
   </style>
 </head>
 
@@ -69,14 +81,160 @@
 </nav>
 
 
+  <!--Section Header Title-->
+  <div class="jumbotron">
+    <h1>Blogs</h1>
+  </div>
+
   <!--Section Blogs-->
   <div class="container-fluid">
+
+    <!--Subsection blogs-->
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-8 blog-space">
+        
+<style>
+  .post-box{
+    margin: 2% 2% 2% 0;
+    padding: 2%;
+    border-left: double black;
+  }
+
+  .date-outbox{
+    margin-right: 0;
+    padding-right: 0;
+    padding-top: 5%;
+  }
+
+  .date-box{
+    margin: 0;
+    border-top: double black;
+    border-left: double black;
+    border-bottom: double black;
+  }
+
+  .date-box > p{
+    margin: 2px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .arrow-left{
+    padding-left: 20%;
+  }
+
+  .arrow-right{
+    padding-right: 20%;
+  }
+
+</style>
+
+
+<!-- Pagination links -->
+<div class="pagination">
+
+  <!--Previous Page-->
+  <div class="mr-auto arrow-left">
+  
+    <i class="material-icons">keyboard_arrow_left</i>
+  
+  </div>
+
+  <!--Current Page NO. of Total-->
+  <span class="md-auto">Page:  of </span>
+
+  <!--Next Page-->
+  <div class="ml-auto arrow-right">
+  
+    <i class="material-icons">keyboard_arrow_right</i>
+  
+  </div>
+</div>
+
+
+<!-- This loops through the paginated posts -->
+
+
+<!-- Pagination links -->
+<div class="pagination">
+
+  <!--Previous Page-->
+  <div class="mr-auto arrow-left">
+  
+    <i class="material-icons">keyboard_arrow_left</i>
+  
+  </div>
+
+  <!--Current Page NO. of Total-->
+  <span class="md-auto">Page:  of </span>
+
+  <!--Next Page-->
+  <div class="ml-auto arrow-right">
+  
+    <i class="material-icons">keyboard_arrow_right</i>
+  
+  </div>
+</div>
+
       </div>
+
+      <!--Subsection find blog by-->
       <div class="col-md-4">
+        <div>
+          <div class="list-group">
+            <a href="#" class="list-group-item active">
+              Cras justo odio
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+            <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+            <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+            <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
+  <!--Section Footer-->
+  <style>
+.footer-divider{
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding: 1px;
+  background-color: black;
+  display: block;
+}
+</style>
+
+<div>
+  <div class="footer-divider"></div>
+  <div class="text-center">
+  <style>
+.social-fa{
+  color: black;
+  font-size: 30px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+</style>
+
+<div>
+  <a href="https://github.com/zixuanz">
+    <i class="fa fa-github social-fa"></i>
+  </a>
+  <a href="#">
+    <i class="fa fa-linkedin-square social-fa"></i>
+  </a>
+  <a href="#">
+    <i class="fa fa-file social-fa"></i>
+  </a>
+</div>
+
+  <p>Copyright © ZixuanZ 2017 </p>
+</div>
+</div>
+
+
 </body>
 </html>

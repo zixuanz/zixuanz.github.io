@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head lang="en">
-  <title>Welcome to ZixuanZ</title>
+  <title>Welcome to ZixuanZ's Blog</title>
   <meta name="author" content="zixuanz">
   <meta name="description" content="My portfolio">
 
@@ -12,7 +12,7 @@
   <!--Fonts Links-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!--Customized CSS
   <link ref="stylesheet" href="/assets/css/page_index.css">
   -->
@@ -83,6 +83,7 @@
     padding-right: 3%;
   }
 
+
   </style>
 </head>
 
@@ -104,21 +105,71 @@
         <p>Zixuan Z</p>
         <p>Web Android</p>
         <style>
-.social-icon{
-  width: 35px;
+.social-fa{
+  color: black;
+  font-size: 30px;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 </style>
 
 <div>
   <a href="https://github.com/zixuanz">
-    <img class="social-icon rounded-circle" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt="Github Account">
+    <i class="fa fa-github social-fa"></i>
+  </a>
+  <a href="#">
+    <i class="fa fa-linkedin-square social-fa"></i>
+  </a>
+  <a href="#">
+    <i class="fa fa-file social-fa"></i>
   </a>
 </div>
 
       </div>
     </div>
   </div>
+
+  <!--Seciton Sidebar for Scroll up-->
+  <style>
+  .aside-out{
+    position:relative;
+    margin-top: 5%;
+  }
+
+  aside{
+    float: right;
+    width: 50px;
+  }
+
+  .aside-inner{
+    position: fixed;
+    font-size: 25px;
+    animation-name: goup;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes goup {
+      0%    {opacity: 0}
+      25%   {opacity: 0.5}
+      50%   {opacity: 1}
+      75%   {opacity: 0.5}
+      100%  {opacity: 0; -ms-transform: translate(0px, -10px);-webkit-transform: translate(0px, -10px);transform: translate(0px, -10px);}
+  }
+
+  .cursor{
+    cursor: pointer;
+  }
+
+</style>
+
+<div class="aside-out">
+<aside>
+  <div class="aside-inner"><i class="fa fa-angle-double-up"></i></div>
+</aside>
+</div>
+
 
   <!--Section Navbar-->
   <nav class="navbar navbar-toggleable-sm navbar-outline">
@@ -133,8 +184,10 @@
   </nav>
   <div class="divider"></div>
 
+
   <!--Section Latest Activity on Left and Userinfo on Right-->
   <div class="container-fluid">
+
     <div class="row">
       <div class="col-md-8 blog-space">
         
@@ -221,10 +274,12 @@
   <li>Google Home</li>
   <li>Android Go</li>
   <li>Kotlin</li>
+  <li>amp bind</li>
 </ul>
 
 <p>g.co/tpusignup
-g.co/InstantApps</p>
+g.co/InstantApps
+firebase</p>
 
       </div>
     </div>
@@ -251,18 +306,18 @@ g.co/InstantApps</p>
 
 <p>Well, until right now, I temporally completed design of index page.</p>
 
-<p>I had a serious problem which is cannot include a css to html page correctly. I think that was caused by site.url settings. I could not get through it. Thus I decided just write into each pages. At least it was convenient for me to modify the style.</p>
+<p>I had a serious problem which was I could not include a external css to html page correctly. I think that was caused by site.url settings. I could not get through it. Thus I decided just write style sheet into each pages. At least it was convenient for me to modify.</p>
 
 <p>What else I can do in index.html page:</p>
 <ul>
   <li>The toggle button, which is for the collapsed navbar menu, will be modified to the similar style of webpage.</li>
   <li>The collapsed menu is not good looking. I will try to have before-collapse and after-collapse design.</li>
   <li>Navbar will be stick to top when scroll over it.</li>
-  <li>Create foot.html and include it in.</li>
+  <li>Create footer.html and include it in.</li>
   <li>After all sections in index page are done, modify details such as how to show time.</li>
 </ul>
 
-<p>Next, I will start styling post.html and write more and more blogs used for testing!</p>
+<p>Next, I will start styling post.html and write more and more blogs as well as use them for testing!</p>
 
       </div>
     </div>
@@ -293,26 +348,43 @@ g.co/InstantApps</p>
       </div>
       <!--SubSection General About-->
       <div class="col-md-4 text-center">
+        <div class="about m-5 p3">
+        </div>
+
         <article class="about m-5 p-3">
-          <h5>About Me</h5>
-          <p>Hello!!</p>
+          <h5>Welcome!</h5>
+          <p>Hello everyone! This is ZixuanZ's blog as well as my portfolio. I will write down what I learned in my daily work and share my views here. If you are interested in me, please step to "About Me" to know me more about my skills, interests and resume. Hope you enjoy here. Thanks!</p>
           <style>
-.social-icon{
-  width: 35px;
+.social-fa{
+  color: black;
+  font-size: 30px;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 </style>
 
 <div>
   <a href="https://github.com/zixuanz">
-    <img class="social-icon rounded-circle" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt="Github Account">
+    <i class="fa fa-github social-fa"></i>
+  </a>
+  <a href="#">
+    <i class="fa fa-linkedin-square social-fa"></i>
+  </a>
+  <a href="#">
+    <i class="fa fa-file social-fa"></i>
   </a>
 </div>
 
         </article>
+
+        <div class="about m-5 p3">
+        </div>
+
       </div>
     </div>
   </div>
+
 
   <style>
 .footer-divider{
@@ -328,15 +400,24 @@ g.co/InstantApps</p>
   <div class="footer-divider"></div>
   <div class="text-center">
   <style>
-.social-icon{
-  width: 35px;
+.social-fa{
+  color: black;
+  font-size: 30px;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 </style>
 
 <div>
   <a href="https://github.com/zixuanz">
-    <img class="social-icon rounded-circle" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt="Github Account">
+    <i class="fa fa-github social-fa"></i>
+  </a>
+  <a href="#">
+    <i class="fa fa-linkedin-square social-fa"></i>
+  </a>
+  <a href="#">
+    <i class="fa fa-file social-fa"></i>
   </a>
 </div>
 
@@ -349,6 +430,16 @@ g.co/InstantApps</p>
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script>
+  $("document").ready(function(){
+    $(".aside-inner").hover(function(){
+      $(this).toggleClass("cursor");
+    });
 
+    $(".aside-inner").click(function(){
+      $(window).scrollTop(0);
+    });
+  });
+  </script>
 </body>
 </html>

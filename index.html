@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <head lang="en">
-  <title>Welcome to ZixuanZ</title>
+  <title>Welcome to ZixuanZ's Blog</title>
   <meta name="author" content="zixuanz">
   <meta name="description" content="My portfolio">
 
@@ -16,7 +16,7 @@
   <!--Fonts Links-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!--Customized CSS
   <link ref="stylesheet" href="{{ site.github.url }}/assets/css/page_index.css">
   -->
@@ -87,6 +87,7 @@
     padding-right: 3%;
   }
 
+
   </style>
 </head>
 
@@ -112,6 +113,9 @@
     </div>
   </div>
 
+  <!--Seciton Sidebar for Scroll up-->
+  {% include asidebar.html %}
+
   <!--Section Navbar-->
   <nav class="navbar navbar-toggleable-sm navbar-outline">
     <div class="collapse navbar-collapse" id="navbar_menu">
@@ -125,22 +129,32 @@
   </nav>
   <div class="divider"></div>
 
+
   <!--Section Latest Activity on Left and Userinfo on Right-->
   <div class="container-fluid">
+
     <div class="row">
       <div class="col-md-8 blog-space">
         {% include post_list.html %}
       </div>
       <!--SubSection General About-->
       <div class="col-md-4 text-center">
+        <div class="about m-5 p3">
+        </div>
+
         <article class="about m-5 p-3">
-          <h5>About Me</h5>
-          <p>Hello!!</p>
+          <h5>Welcome!</h5>
+          <p>Hello everyone! This is ZixuanZ's blog as well as my portfolio. I will write down what I learned in my daily work and share my views here. If you are interested in me, please step to "About Me" to know me more about my skills, interests and resume. Hope you enjoy here. Thanks!</p>
           {% include social_links.html %}
         </article>
+
+        <div class="about m-5 p3">
+        </div>
+
       </div>
     </div>
   </div>
+
 
   {% include footer.html %}
 
@@ -148,6 +162,16 @@
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script>
+  $("document").ready(function(){
+    $(".aside-inner").hover(function(){
+      $(this).toggleClass("cursor");
+    });
 
+    $(".aside-inner").click(function(){
+      $(window).scrollTop(0);
+    });
+  });
+  </script>
 </body>
 </html>

@@ -12,6 +12,7 @@
   <!--Fonts Links-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <style>
   body{
@@ -21,6 +22,26 @@
   .jumbotron{
     background-color: white;
     padding-left: 10%;
+  }
+
+  .tags-box{
+    border-top: double black;
+    border-bottom: double black;
+  }
+
+  .tags-box > div{
+    width: 120px;
+    border-left: double black;
+    border-right: double black;
+    display: inline-block;
+  }
+
+  .tags-box a{
+    color: black;
+  }
+
+  .tags-fa{
+    display: none;
   }
 
   .card{
@@ -87,6 +108,52 @@
   <div class="jumbotron">
     <h1>Projects</h1>
   </div>
+  <div class="tags-box text-center">
+    <div><i class="fa fa-caret-right tags-fa"></i><a href="#"> All </a><i class="fa fa-caret-left tags-fa"></i></div>
+    <div><i class="fa fa-caret-right tags-fa"></i><a href="#"> Android </a><i class="fa fa-caret-left tags-fa"></i></div>
+    <div><i class="fa fa-caret-right tags-fa"></i><a href="#"> Python </a><i class="fa fa-caret-left tags-fa"></i></div>
+    <div><i class="fa fa-caret-right tags-fa"></i><a href="#"> Web </a><i class="fa fa-caret-left tags-fa"></i></div>
+  </div>
+
+  <style>
+  .aside-out{
+    position:relative;
+    margin-top: 5%;
+  }
+
+  aside{
+    float: right;
+    width: 50px;
+  }
+
+  .aside-inner{
+    position: fixed;
+    font-size: 25px;
+    animation-name: goup;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes goup {
+      0%    {opacity: 0}
+      25%   {opacity: 0.5}
+      50%   {opacity: 1}
+      75%   {opacity: 0.5}
+      100%  {opacity: 0; -ms-transform: translate(0px, -10px);-webkit-transform: translate(0px, -10px);transform: translate(0px, -10px);}
+  }
+
+  .cursor{
+    cursor: pointer;
+  }
+
+</style>
+
+<div class="aside-out">
+<aside>
+  <div class="aside-inner"><i class="fa fa-angle-double-up"></i></div>
+</aside>
+</div>
+
 
   <!--Section Blogs-->
   <div class="container-fluid">
@@ -98,16 +165,16 @@
             <h4 class="card-title">Plain Text Reader App</h4>
             <p class="card-text">An android application used to read txt file.</p>
             <p><a href="https://github.com/zixuanz/Android-App----PlainTextReader">Source Code</a></p>
-            <p class="card-text ml-auto"><small class="text-muted">tags</small></p>
+            <p class="card-text ml-auto"><small class="text-muted">Android</small></p>
           </div>
         </div>
         <div class="card">
           <img class="card-img-top" src="http://localhost:4000/assets/img/Local_Weather_App_sm.png" alt="Card image cap">
           <div class="card-block">
             <h4 class="card-title">Local Weather App</h4>
-            <p class="card-text">A local weather app will show current weather status by your current location.</p>
+            <p class="card-text">This local weather app will show current weather status by your current location.</p>
             <p><a href="https://codepen.io/zixuanz/full/QvvNje/">Source Code</a></p>
-            <p class="card-text"><small class="text-muted">tags</small></p>
+            <p class="card-text"><small class="text-muted">Web HTML5 JS CSS FreeCodeCamp</small></p>
           </div>
         </div>
       </div>
@@ -115,35 +182,43 @@
   </div>
 
   <!--Section Footer-->
-  <style>
-.footer-divider{
-  margin-top: 2%;
-  margin-bottom: 2%;
-  padding: 1px;
-  background-color: black;
-  display: block;
-}
-</style>
-
-<div>
-  <div class="footer-divider"></div>
-  <div class="text-center">
-  <style>
-.social-icon{
-  width: 35px;
+  <div>
+    <div class="footer-divider"></div>
+    <div class="text-center">
+    <style>
+.social-fa{
+  color: black;
+  font-size: 30px;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 </style>
 
 <div>
   <a href="https://github.com/zixuanz">
-    <img class="social-icon rounded-circle" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt="Github Account">
+    <i class="fa fa-github social-fa"></i>
+  </a>
+  <a href="#">
+    <i class="fa fa-linkedin-square social-fa"></i>
+  </a>
+  <a href="#">
+    <i class="fa fa-file social-fa"></i>
   </a>
 </div>
 
-  <p>Copyright © ZixuanZ 2017 </p>
-</div>
-</div>
+    <p>Copyright © ZixuanZ 2017 </p>
+  </div>
 
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script>
+    $("document").ready(function(){
+      $(".tags-box div").hover(function(){
+          $(this).children("i").toggle();
+      })
+    })
+  </script>
 </body>
 </html>

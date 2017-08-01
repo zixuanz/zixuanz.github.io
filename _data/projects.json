@@ -1,0 +1,65 @@
+{
+  "projects":[
+    {
+      "name":"Plain Text Reader",
+      "pic":"https://github.com/zixuanz/Android-App----PlainTextReader/blob/master/Screen%20Shot%202017-04-26%20at%207.27.18%20PM.png?raw=true",
+      "description":"dd",
+      "source":"https://github.com/zixuanz/Android-App----PlainTextReader",
+      "tags":[
+        "Android"
+      ],
+      "class":"android"
+    },
+    {
+      "name":"Local Weather",
+      "pic":"/assets/img/Local_Weather_App_sm.png",
+      "description":"dd",
+      "source":"https://codepen.io/zixuanz/full/QvvNje/",
+      "tags":[
+        "Web", "Html", "JS", "CSS"
+      ],
+      "class":"web html js css"
+    },
+    {
+      "name":"Local Weather",
+      "pic":"/assets/img/Local_Weather_App_sm.png",
+      "description":"dd",
+      "source":"https://codepen.io/zixuanz/full/QvvNje/",
+      "tags":[
+        "Web", "Html", "JS", "CSS"
+      ],
+      "class":"web html js css"
+    },
+    {
+      "name":"Local Weather",
+      "pic":"/assets/img/Local_Weather_App_sm.png",
+      "description":"dd",
+      "source":"https://codepen.io/zixuanz/full/QvvNje/",
+      "tags":[
+        "Web", "Html", "JS", "CSS"
+      ],
+      "class":"web html js css"
+    },
+    {
+      "name":"Local Weather",
+      "pic":"/assets/img/Local_Weather_App_sm.png",
+      "description":"dd",
+      "source":"https://codepen.io/zixuanz/full/QvvNje/",
+      "tags":[
+        "Web", "Html", "JS", "CSS"
+      ],
+      "class":"web html js css"
+    },
+    {
+      "name":"Local Weather",
+      "pic":"/assets/img/Local_Weather_App_sm.png",
+      "description":"dd",
+      "source":"https://codepen.io/zixuanz/full/QvvNje/",
+      "tags":[
+        "Web", "Html", "JS", "CSS"
+      ],
+      "class":"web html js css"
+    }
+
+  ]
+}

@@ -1,0 +1,39 @@
+body{
+  font-family: 'Raleway', sans-serif;
+}
+
+.jumbotron{
+  background-color: white;
+  padding-left: 10%;
+}
+
+.tags-box{
+  border-top: double black;
+  border-bottom: double black;
+}
+
+.tags-box > div{
+  width: 120px;
+  border-left: double black;
+  border-right: double black;
+  display: inline-block;
+}
+
+.tags-box a{
+  color: black;
+}
+
+.tags-fa{
+  display: none;
+}
+
+.block{
+  width: 280px;
+  border: solid 1px gray;
+  border-radius: 3px;
+}
+
+.block-img{
+  width: 200px;
+  height: 200px;
+}

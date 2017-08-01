@@ -1,110 +1,43 @@
 <!DOCTYPE html>
-<head lang="en">
-  <title>Welcome to ZixuanZ's Blog</title>
-  <meta name="author" content="zixuanz">
-  <meta name="description" content="My portfolio">
-
-  <!-- Required meta tags for bootstrap -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-  <!--Fonts Links-->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!--Customized CSS
-  <link ref="stylesheet" href="/assets/css/page_index.css">
-  -->
-  <style>
-  body{
-    font-family: 'Raleway', sans-serif;
-  }
-
-  .jumbotron{
-    margin: 0px;
-    padding-bottom: 0;
-    background-color: white;
-  }
-
-  .flex-row{
-    margin-left: 10%;
-  }
-
-  .avatar-md{
-    width: 100px;
-    height: 100px;
-  }
-
-  .intro-box{
-    border-left: solid 2px black;
-  }
-
-  .intro-box > p{
-    margin: 2px;
-  }
-
-
-  .navbar-outline{
-    margin: 0;
-    padding: 0 5% 0 0;
-  }
-
-  .navbar-non-collapse{
-    margin: 0;
-    padding: 2px 2% 2px 2%;
-    background-color: black;
-    border-radius: 25px 25px 0 0;
-  }
-
-  ul.navbar-nav a{
-    color: white;
-  }
-
-  ul.navbar-nav a:hover{
-    color: gray;
-  }
-
-  .divider{
-    margin-top: 0;
-    margin-bottom: 5%;
-    padding: 1px;
-    background-color: black;
-    display: block;
-  }
-
-  .about{
-    border: double black;
-    border-radius: 3px;
-  }
-
-  .blog-space{
-    padding-left: 3%;
-    padding-right: 3%;
-  }
-
-
-  </style>
-</head>
-
 <html>
-<body>
+  <head lang="en">
+    <title>Welcome to ZixuanZ's Blog</title>
+    <meta name="author" content="zixuanz">
+    <meta name="description" content="My portfolio">
 
-  <!--Navbar Collapse Button-->
-  <nav class="navbar navbar-light navbar-toggleable-sm">
-    <button class="navbar-toggler navbar-toggler-right navbar-text" type="button" data-toggle="collapse" data-target="#navbar_menu" aria-controls="navbar_menu" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </nav>
+    <!-- Required meta tags for bootstrap -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
-  <!--Section Jumbotron-->
-  <div class="jumbotron">
-    <div class="d-flex flex-row align-items-center">
-      <img class="avatar-md m-2 img-thumbnail" src="https://avatars3.githubusercontent.com/u/6519274?v=3&s=400">
-      <div class="intro-box m-3 p-4">
-        <p>Zixuan Z</p>
-        <p>Web Android</p>
-        <style>
+    <!--Fonts Links-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--Customized CSS Stylesheet-->
+    <link rel="stylesheet" href="/assets/css/page_index.css" type="text/css">
+
+  </head>
+
+  <body>
+
+    <!--Navbar Collapse Button-->
+    <nav class="navbar navbar-light navbar-toggleable-sm">
+      <button class="navbar-toggler navbar-toggler-right navbar-text" type="button" data-toggle="collapse" data-target="#navbar_menu" aria-controls="navbar_menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+
+    <!--Section Jumbotron-->
+    <div class="jumbotron">
+      <div class="d-flex flex-row align-items-center">
+        <img class="avatar-md m-2 img-thumbnail" src="https://avatars3.githubusercontent.com/u/6519274?v=3&s=400">
+        <div class="intro-box m-3 p-4">
+          <h2>Zixuan Z</h2>
+          <p>Web Android</p>
+          <style>
 .social-fa{
   color: black;
   font-size: 30px;
@@ -126,71 +59,33 @@
   </a>
 </div>
 
+        </div>
       </div>
     </div>
-  </div>
-
-  <!--Seciton Sidebar for Scroll up-->
-  <style>
-  .aside-out{
-    position:relative;
-    margin-top: 5%;
-  }
-
-  aside{
-    float: right;
-    width: 50px;
-  }
-
-  .aside-inner{
-    position: fixed;
-    font-size: 25px;
-    animation-name: goup;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-  }
-
-  @keyframes goup {
-      0%    {opacity: 0}
-      25%   {opacity: 0.5}
-      50%   {opacity: 1}
-      75%   {opacity: 0.5}
-      100%  {opacity: 0; -ms-transform: translate(0px, -10px);-webkit-transform: translate(0px, -10px);transform: translate(0px, -10px);}
-  }
-
-  .cursor{
-    cursor: pointer;
-  }
-
-</style>
-
-<div class="aside-out">
-<aside>
-  <div class="aside-inner"><i class="fa fa-angle-double-up"></i></div>
-</aside>
-</div>
 
 
-  <!--Section Navbar-->
-  <nav class="navbar navbar-toggleable-sm navbar-outline">
-    <div class="collapse navbar-collapse" id="navbar_menu">
-      <ul class="navbar-nav ml-auto navbar-non-collapse">
-        <li class="nav-item"><a href="http://localhost:4000/index.html" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="http://localhost:4000/blogs.html" class="nav-link">Blogs</a></li>
-        <li class="nav-item"><a href="http://localhost:4000/projects.html" class="nav-link">Projects</a></li>
-        <li class="nav-item"><a href="http://localhost:4000/about.html" class="nav-link">About</a></li>
-      </ul>
-    </div>
-  </nav>
-  <div class="divider"></div>
+    <!--Section Navbar-->
+    <nav class="navbar navbar-toggleable-sm navbar-outline">
+      <div class="collapse navbar-collapse" id="navbar_menu">
+        <ul class="navbar-nav ml-auto navbar-non-collapse">
+          <li class="nav-item"><a href="http://localhost:4000/index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="http://localhost:4000/projects.html" class="nav-link">Projects</a></li>
+          <!--
+          <li class="nav-item"><a href="http://localhost:4000/blogs.html" class="nav-link">Blogs</a></li>
+          <li class="nav-item"><a href="http://localhost:4000/about.html" class="nav-link">About</a></li>
+        -->
+        </ul>
+      </div>
+    </nav>
+    <div class="divider"></div>
 
 
-  <!--Section Latest Activity on Left and Userinfo on Right-->
-  <div class="container-fluid">
+    <!--Section Latest Activity on Left and Userinfo on Right-->
+    <div class="container-fluid">
 
-    <div class="row">
-      <div class="col-md-8 blog-space">
-        
+      <div class="row">
+        <div class="col-md-8 blog-space">
+          
 <style>
   .post-box{
     margin: 2% 2% 2% 0;
@@ -345,16 +240,16 @@ firebase</p>
   </div>
 </div>
 
-      </div>
-      <!--SubSection General About-->
-      <div class="col-md-4 text-center">
-        <div class="about m-5 p3">
         </div>
+        <!--SubSection General About-->
+        <div class="col-md-4 text-center">
+          <div class="about m-5 p3">
+          </div>
 
-        <article class="about m-5 p-3">
-          <h5>Welcome!</h5>
-          <p>Hello everyone! This is ZixuanZ's blog as well as my portfolio. I will write down what I learned in my daily work and share my views here. If you are interested in me, please step to "About Me" to know me more about my skills, interests and resume. Hope you enjoy here. Thanks!</p>
-          <style>
+          <article class="about m-5 p-3">
+            <h5>Welcome!</h5>
+            <p>Hello everyone! This is ZixuanZ's blog as well as my portfolio. I will write down what I learned in my daily work and share my views here. If you are interested in me, please step to "About Me" to know me more about my skills, interests and resume. Hope you enjoy here. Thanks!</p>
+            <style>
 .social-fa{
   color: black;
   font-size: 30px;
@@ -376,17 +271,57 @@ firebase</p>
   </a>
 </div>
 
-        </article>
+          </article>
 
-        <div class="about m-5 p3">
+          <div class="about m-5 p3">
+          </div>
+
         </div>
-
       </div>
     </div>
-  </div>
+
+    <!--Seciton Sidebar for Scroll up-->
+    <style>
+  .aside-out{
+    position:relative;
+    margin-top: 5%;
+  }
+
+  aside{
+    float: right;
+    width: 50px;
+  }
+
+  .aside-inner{
+    position: fixed;
+    font-size: 25px;
+    animation-name: goup;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes goup {
+      0%    {opacity: 0}
+      25%   {opacity: 0.5}
+      50%   {opacity: 1}
+      75%   {opacity: 0.5}
+      100%  {opacity: 0; -ms-transform: translate(0px, -10px);-webkit-transform: translate(0px, -10px);transform: translate(0px, -10px);}
+  }
+
+  .cursor{
+    cursor: pointer;
+  }
+
+</style>
+
+<div class="aside-out">
+<aside>
+  <div class="aside-inner"><i class="fa fa-angle-double-up"></i></div>
+</aside>
+</div>
 
 
-  <style>
+    <style>
 .footer-divider{
   margin-top: 2%;
   margin-bottom: 2%;
@@ -426,20 +361,21 @@ firebase</p>
 </div>
 
 
-  <!-- jQuery first, then Tether, then Bootstrap JS. -->
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-  <script>
-  $("document").ready(function(){
-    $(".aside-inner").hover(function(){
-      $(this).toggleClass("cursor");
-    });
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script>
+    $("document").ready(function(){
+      $(".aside-inner").hover(function(){
+        $(this).toggleClass("cursor");
+      });
 
-    $(".aside-inner").click(function(){
-      $(window).scrollTop(0);
+      $(".aside-inner").click(function(){
+        $(window).scrollTop(0);
+      });
     });
-  });
-  </script>
-</body>
+    </script>
+
+  </body>
 </html>

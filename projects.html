@@ -3,51 +3,68 @@
 ---
 
 <!DOCTYPE html>
-<head lang="en">
-  <title>Projects</title>
-  <meta name="author" content="zixuanz">
-  <meta name="description" content="My portfolio">
+<html>
+  <head lang="en">
+    <title>Projects</title>
+    <meta name="author" content="zixuanz">
+    <meta name="description" content="My portfolio">
 
-  <!-- Required meta tags for bootstrap -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-  <!--Fonts Links-->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Required meta tags for bootstrap -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <!--Fonts Links-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <style>
-  body{
-    font-family: 'Raleway', sans-serif;
-  }
+    <!--Customized CSS Stylesheet-->
+    <link rel="stylesheet" href="/assets/css/page_projects.css" type="text/css">
 
-  .jumbotron{
-    background-color: white;
-    padding-left: 10%;
-  }
+  </head>
 
-  .tags-box{
-    border-top: double black;
-    border-bottom: double black;
-  }
 
-  .tags-box > div{
-    width: 120px;
-    border-left: double black;
-    border-right: double black;
-    display: inline-block;
-  }
+  <body>
+    <!--Section Navbar-->
+    {% include navbar.html %}
 
-  .tags-box a{
-    color: black;
-  }
+    <!--Section Header Title-->
+    <div class="jumbotron">
+      <h1>Projects</h1>
+    </div>
+    <div class="tags-box text-center">
+      <div><i class="fa fa-caret-right tags-fa"></i><a class="all" href="#"> All </a><i class="fa fa-caret-left tags-fa"></i></div>
+      <div><i class="fa fa-caret-right tags-fa"></i><a class="android" href="#"> Android </a><i class="fa fa-caret-left tags-fa"></i></div>
+      <div><i class="fa fa-caret-right tags-fa"></i><a class="python" href="#"> Python </a><i class="fa fa-caret-left tags-fa"></i></div>
+      <div><i class="fa fa-caret-right tags-fa"></i><a class="web" href="#"> Web </a><i class="fa fa-caret-left tags-fa"></i></div>
+    </div>
 
-  .tags-fa{
-    display: none;
-  }
+    {% include asidebar.html %}
 
+    <!--Section Blogs-->
+    <div class="container-fluid">
+      <div>
+
+        <div class="d-flex justify-content-md-center flex-wrap">
+          {% for project in site.data.projects.projects %}
+          <div class="block m-3 {{ project.class}}">
+            <img class="img-fluid" src="{{ project.pic }}" alt="{{ project.name }}">
+            <div class="p-3">
+              <h4 class="card-title">{{ project.name }}</h4>
+              <p class="card-text">{{ project.description }}</p>
+              <p><a href="{{ project.source }}">Source Code</a></p>
+              <p class="card-text ml-auto">
+                {% for tag in project.tags %}
+                <small class="text-muted">{{ tag }}</small>
+                {% endfor %}
+              </p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+  <!--
   .card{
     margin: 10%;
   }
@@ -56,70 +73,90 @@
     width: 100%;
     height: 300px;
   }
-  </style>
-</head>
-
-<html>
-<body>
-  <!--Section Navbar-->
-  {% include navbar.html %}
-
-  <!--Section Header Title-->
-  <div class="jumbotron">
-    <h1>Projects</h1>
-  </div>
-  <div class="tags-box text-center">
-    <div><i class="fa fa-caret-right tags-fa"></i><a href="#"> All </a><i class="fa fa-caret-left tags-fa"></i></div>
-    <div><i class="fa fa-caret-right tags-fa"></i><a href="#"> Android </a><i class="fa fa-caret-left tags-fa"></i></div>
-    <div><i class="fa fa-caret-right tags-fa"></i><a href="#"> Python </a><i class="fa fa-caret-left tags-fa"></i></div>
-    <div><i class="fa fa-caret-right tags-fa"></i><a href="#"> Web </a><i class="fa fa-caret-left tags-fa"></i></div>
-  </div>
-
-  {% include asidebar.html %}
-
-  <!--Section Blogs-->
-  <div class="container-fluid">
-    <div>
-      <div class="card-deck">
-        <div class="card">
-          <img class="card-img-top" src="https://github.com/zixuanz/Android-App----PlainTextReader/blob/master/Screen%20Shot%202017-04-26%20at%207.27.18%20PM.png?raw=true" alt="Plain Text Reader">
-          <div class="card-block">
-            <h4 class="card-title">Plain Text Reader App</h4>
-            <p class="card-text">An android application used to read txt file.</p>
-            <p><a href="https://github.com/zixuanz/Android-App----PlainTextReader">Source Code</a></p>
-            <p class="card-text ml-auto"><small class="text-muted">Android</small></p>
+        <div class="card-deck">
+          {% for project in site.data.projects.projects %}
+          <div class="card mb-4 {{ project.class }}">
+            <img class="card-img-top img-fluid" src="{{ project.pic }}" alt="{{ project.name }}">
+            <div class="card-block">
+              <h4 class="card-title">{{ project.name }}</h4>
+              <p class="card-text">{{ project.description }}</p>
+              <p><a href="{{ project.source }}">Source Code</a></p>
+              <p class="card-text ml-auto">
+                {% for tag in project.tags %}
+                <small class="text-muted">{{ tag }}</small>
+                {% endfor %}
+              </p>
+            </div>
           </div>
+          {% endfor %}
         </div>
-        <div class="card">
-          <img class="card-img-top" src="{{site.url}}/assets/img/Local_Weather_App_sm.png" alt="Card image cap">
-          <div class="card-block">
-            <h4 class="card-title">Local Weather App</h4>
-            <p class="card-text">This local weather app will show current weather status by your current location.</p>
-            <p><a href="https://codepen.io/zixuanz/full/QvvNje/">Source Code</a></p>
-            <p class="card-text"><small class="text-muted">Web HTML5 JS CSS FreeCodeCamp</small></p>
-          </div>
-        </div>
+  -->
+
+
+
       </div>
     </div>
-  </div>
 
-  <!--Section Footer-->
-  <div>
-    <div class="footer-divider"></div>
-    <div class="text-center">
-    {% include social_links.html %}
-    <p>Copyright © ZixuanZ 2017 </p>
-  </div>
+    <!--Section Detail of Projects
+    <div>
+      <div class="embed-responsive embed-responsive-1by1">
+        <iframe class="embed-responsive-item" src="#">
+            <head>
+            </head>
+            <html>
+              <body>
+                pp
+              </body>
+            </html>
+        </iframe>
+      </div>
+    </div>
+    -->
 
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-  <script>
-    $("document").ready(function(){
-      $(".tags-box div").hover(function(){
-          $(this).children("i").toggle();
+    <!--Section Footer-->
+    <div>
+      <div class="footer-divider"></div>
+      <div class="text-center">
+      {% include social_links.html %}
+      <p>Copyright © ZixuanZ 2017 </p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script>
+      $("document").ready(function(){
+        $(".tags-box div").hover(function(){
+            $(this).children("i").toggle();
+        })
+
+        projectToggle();
+
       })
-    })
-  </script>
-</body>
+
+      function proTypeToggle(type){
+        var effect = ".tags-box div " + type;
+        var effected = ".d-flex > " + type;
+
+        if( type === ".all"){
+          $(effect).click(function(){
+            $(".d-flex > .block").show();
+          })
+        }else{
+          $(effect).click(function(){
+            $(".d-flex > .block").hide();
+            $(effected).show();
+          })
+        }
+
+      }
+
+      function projectToggle(){
+        proTypeToggle(".android");
+        proTypeToggle(".web");
+        proTypeToggle(".python");
+        proTypeToggle(".all")
+      }
+    </script>
+  </body>
 </html>

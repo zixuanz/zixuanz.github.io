@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<head lang="en">
+  <title>Install Multiple Versions of Python on Mac</title>
+  <meta name="author" content="zixuanz">
+  <meta name="description" content="My portfolio">
+
+  <!-- Required meta tags for bootstrap -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <!--Fonts Links-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/page_post.css">
+</head>
+
+<html>
+  <body>
+    <style>
+  .navbar-outline{
+    margin-top: 0;
+    padding: 0 5% 0 0;
+  }
+
+  .navbar-non-collapse{
+    margin: 0;
+    padding: 2px 2% 2px 2%;
+    background-color: black;
+    border-radius: 0 0 25px 25px;
+  }
+
+  ul.navbar-nav a{
+    color: white;
+  }
+
+  ul.navbar-nav a:hover{
+    color: gray;
+  }
+
+  .divider{
+    margin-top: 2%;
+    margin-bottom: 0;;
+    padding: 1px;
+    background-color: black;
+    display: block;
+  }
+</style>
+
+<div class="divider"></div>
+<nav class="navbar navbar-toggleable-sm navbar-outline sticky-top">
+  <button class="navbar-light navbar-toggler navbar-toggler-right navbar-text" type="button" data-toggle="collapse" data-target="#navbar_menu" aria-controls="navbar_menu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbar_menu">
+    <ul class="navbar-nav ml-auto navbar-non-collapse">
+      <li class="nav-item"><a href="http://localhost:4000/index.html" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="http://localhost:4000/projects.html" class="nav-link">Projects</a></li>
+      <!--
+      <li class="nav-item"><a href="http://localhost:4000/blogs.html" class="nav-link">Blogs</a></li>
+      <li class="nav-item"><a href="http://localhost:4000/about.html" class="nav-link">About</a></li>
+    -->
+    </ul>
+  </div>
+</nav>
+
+
+    <div class="jumbotron">
+      <div>
+        <h3>Install Multiple Versions of Python on Mac</h3>
+        <p><small>Post Time: Sun, May 21, 2017 18:25</small></p>
+        <p><small>Category: <a href="#">Web</a></small></p>
+      </div>
+    </div>
+
+    <div>
+      <article class="p-5">
+        <h6 id="table-of-contents">Table of Contents</h6>
+<ul>
+  <li><a href="#homebrew">HomeBrew</a></li>
+  <li><a href="#pyenv">pyenv</a>
+    <ul>
+      <li>Install</li>
+      <li>Setup Environment</li>
+      <li>Examine Installation</li>
+      <li>Useful Commands</li>
+    </ul>
+  </li>
+  <li><a href="#python">Python</a>
+    <ul>
+      <li>Install</li>
+      <li>Use Multiple versions</li>
+    </ul>
+  </li>
+  <li><a href="#pyenvv">pyenv-virtualenv</a>
+    <ul>
+      <li>Install</li>
+      <li>Setup Environment</li>
+      <li>Set and Activate Environment</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<p>Mac already provides python 2.7. However, I needed to use Django with python 3.6 for a demo on my Mac. Thus, I installed <strong>pyenv</strong> and <strong>pyenv-virtualenv</strong> for convenience.</p>
+
+<p>Pyenv is light but strong. By pyenv, users can manage multiple versions of python on one system. And its plugin pyenv-virtualenv can create several virtual environment which allows users working independently.</p>
+
+<p>Here is <a href="https://github.com/pyenv/pyenv#choosing-the-python-version" title="github adr">link</a> to the doc for pyenv. As author recommended, I use HomeBrew to install pyenv.</p>
+
+<hr />
+
+<h4 id="--homebrew-">- HomeBrew <a id="homebrew"></a></h4>
+
+<ul>
+  <li>If you are new to HomeBrew, just come <a href="https://brew.sh" title="HomeBrew Page">here</a> to learn it.</li>
+  <li>If you already install it, please update it by <code class="highlighter-rouge">brew update</code> in Terminal before installing.</li>
+</ul>
+
+<hr />
+
+<h4 id="--pyenv-">- pyenv <a id="pyenv"></a></h4>
+
+<h5 id="-install">— Install</h5>
+
+<p>Open Terminal and type <code class="highlighter-rouge">brew install pyenv</code> to install pyenv</p>
+
+<h5 id="-setup-environment">— Setup Environment</h5>
+
+<ol>
+  <li>Open Terminal.</li>
+  <li>Go to home folder by typing <code class="highlighter-rouge">cd</code> or <code class="highlighter-rouge">cd ~</code> in Terminal.</li>
+  <li>Open <strong>.bash_profile</strong> (If not existed, just create one) by any editors (nano, vim, etc).</li>
+  <li>Type following code. Then save and exit editor.
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PYENV_ROOT</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.pyenv"</span>
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$PYENV_ROOT</span><span class="s2">/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
+<span class="nb">eval</span> <span class="s2">"</span><span class="k">$(</span>pyenv init -<span class="k">)</span><span class="s2">"</span>
+</code></pre>
+    </div>
+  </li>
+  <li>Make it effect immediately by typing <code class="highlighter-rouge">source .bash_profile</code> in Terminal</li>
+</ol>
+
+<h5 id="-examine-installation">— Examine Installation</h5>
+
+<p>In Terminal, enter command <code class="highlighter-rouge">pyenv</code>. If it shows a guide, you install pyenv successfully.</p>
+
+<h5 id="-useful-commands">— Useful Commands</h5>
+<ul>
+  <li><code class="highlighter-rouge">pyenv install [version]</code>: install python with “version”</li>
+  <li><code class="highlighter-rouge">pyenv uninstall [version]</code>: uninstall python with “version”</li>
+  <li><code class="highlighter-rouge">pyenv version</code>: display current version of Python</li>
+  <li><code class="highlighter-rouge">pyenv versions</code>: display all versions of Python that you already installed</li>
+</ul>
+
+<h4 id="--python-">- Python <a id="python"></a></h4>
+<h5 id="-install-1">— Install</h5>
+
+<p>As learned from “Useful Commands” for pyenv, now we can use <code class="highlighter-rouge">pyenv install</code> to install.</p>
+
+<p>For example, <code class="highlighter-rouge">pyenv install 3.6.1</code> will install Python 3.6.1.</p>
+
+<p>Note that, if you fail to install, there are may two reasons:</p>
+<ul>
+  <li>Version is not valid or not existed. Command <code class="highlighter-rouge">pyenv install --list</code> will list up available versions.</li>
+  <li>Your pyenv is out of update. Update by <code class="highlighter-rouge">brew update pyenv</code> before installing.</li>
+</ul>
+
+<h5 id="-use-multiple-versions">— Use Multiple versions</h5>
+
+<ol>
+  <li>Go to the folder you are going to work in Terminal.</li>
+  <li>Type command <code class="highlighter-rouge">pyenv local [version]</code>. This indicates python [version] will be locally applied in this folder.</li>
+  <li><code class="highlighter-rouge">pyenv version</code> examines whether you setup successfully.</li>
+</ol>
+
+<h4 id="--pyenv-virtualenv-">- pyenv-virtualenv <a id="pyenvv"></a></h4>
+
+<p>pyenv-virtualenv is not neccessary but improve experience. It activates a virtual environment so that user can work with specific python version anywhere under this environment. Here is the <a href="https://github.com/pyenv/pyenv-virtualenv">link</a>.</p>
+
+<h5 id="-install-2">— Install</h5>
+
+<p>Type <code class="highlighter-rouge">brew install pyenv-virtualenv</code> in Terminal.</p>
+
+<h5 id="-setup-environment-1">— Setup Environment</h5>
+
+<ol>
+  <li>Open Terminal.</li>
+  <li>Go to home folder by typing <code class="highlighter-rouge">cd</code> or <code class="highlighter-rouge">cd ~</code> in Terminal.</li>
+  <li>Open <strong>.bash_profile</strong> (If not existed, just create one) by any editors (nano, vim, etc).</li>
+  <li>Type following code. Then save and exit editor.
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">eval</span> <span class="s2">"</span><span class="k">$(</span>pyenv init -<span class="k">)</span><span class="s2">"</span>
+<span class="nb">eval</span> <span class="s2">"</span><span class="k">$(</span>pyenv virtualenv-init -<span class="k">)</span><span class="s2">"</span>
+</code></pre>
+    </div>
+  </li>
+  <li>Make it effect immediately by typing <code class="highlighter-rouge">source .bash_profile</code> in Terminal</li>
+</ol>
+
+<p>There are other options list in doc. You can check the <a href="https://github.com/pyenv/pyenv-virtualenv">link</a> and setup by yourself.</p>
+
+<h5 id="-set-and-activate-environment">— Set and Activate Environment</h5>
+
+<ol>
+  <li>Type command <code class="highlighter-rouge">pyenv virtualenv [version] [alias]</code> in Terminal. This will create a environment named “alias” with Python [version].</li>
+</ol>
+
+<p>For example, <code class="highlighter-rouge">pyenv virtualenv 3.6.1 py361</code> will create a environment “py361” with Python 3.6.1.</p>
+
+<ol>
+  <li>Type command <code class="highlighter-rouge">pyenv activate [alias]</code> in Terminal. It actives the environment named “alias”.</li>
+</ol>
+
+<p>For example, <code class="highlighter-rouge">pyenv activate py361</code> will activate the environment named “py361”.</p>
+
+<p>If you forget, check list of created virtual environment by <code class="highlighter-rouge">pyenv virtualenvs</code>.</p>
+
+<p>Additionally, <code class="highlighter-rouge">pyenv deactivate</code> will leave this virtual environment.</p>
+
+<p>Note that, we only can create virtual environment with installed python version.</p>
+
+      </article>
+    </div>
+
+    <!--Section Footer-->
+    <style>
+.footer-divider{
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding: 1px;
+  background-color: black;
+  display: block;
+}
+</style>
+
+<div>
+  <div class="footer-divider"></div>
+  <div class="text-center">
+  <style>
+.social-fa{
+  color: black;
+  font-size: 30px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+</style>
+
+<div>
+  <a href="https://github.com/zixuanz">
+    <i class="fa fa-github social-fa"></i>
+  </a>
+  <a href="#">
+    <i class="fa fa-linkedin-square social-fa"></i>
+  </a>
+  <a href="#">
+    <i class="fa fa-file social-fa"></i>
+  </a>
+</div>
+
+  <p>Copyright © ZixuanZ 2017 </p>
+</div>
+</div>
+
+
+  </body>
+</html>

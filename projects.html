@@ -49,16 +49,18 @@
         <div class="d-flex justify-content-md-center flex-wrap">
           {% for project in site.data.projects.projects %}
           <div class="block m-3 {{ project.class}}">
-            <img class="img-fluid" src="{{ project.pic }}" alt="{{ project.name }}">
-            <div class="p-3">
-              <h4 class="card-title">{{ project.name }}</h4>
-              <p class="card-text">{{ project.description }}</p>
-              <p><a href="{{ project.source }}">Source Code</a></p>
-              <p class="card-text ml-auto">
-                {% for tag in project.tags %}
-                <small class="text-muted">{{ tag }}</small>
-                {% endfor %}
-              </p>
+            <div class="left-side">
+              <img class="img-fluid" src="{{ project.pic }}" alt="{{ project.name }}">
+              <div class="p-3">
+                <h4 class="card-title">{{ project.name }}</h4>
+                <p class="card-text">{{ project.description }}</p>
+                <p><a href="{{ project.source }}">Source Code</a></p>
+                <p class="card-text ml-auto">
+                  {% for tag in project.tags %}
+                  <small class="text-muted">{{ tag }}</small>
+                  {% endfor %}
+                </p>
+              </div>
             </div>
           </div>
           {% endfor %}
@@ -114,12 +116,7 @@
     -->
 
     <!--Section Footer-->
-    <div>
-      <div class="footer-divider"></div>
-      <div class="text-center">
-      {% include social_links.html %}
-      <p>Copyright © ZixuanZ 2017 </p>
-    </div>
+    {% include footer.html %}
 
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>

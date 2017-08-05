@@ -1,9 +1,9 @@
 
 <style>
   .post-box{
-    margin: 2% 2% 2% 0;
     padding: 2%;
     border-left: double black;
+    width: 100%;
   }
 
   .date-outbox{
@@ -23,6 +23,10 @@
     margin: 2px;
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  .title-box{
+
   }
 
   .arrow-left{
@@ -80,12 +84,13 @@
 
     <!--Section for Post Content-->
     <div class="post-box">
-      <div>
+      <div class="title-box">
         <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
-        <p>{{ post.date | date: '%R' }}</p>
+        <p><small class="text-muted">Category: {{ post.category }}</small></p>
       </div>
       <div class="content">
-        {{ post.content }}
+        {{ post.content | truncatewords: 25 }}
+        <a href="{{ post.url }}"><small class="text-right">Read more</small></a>
       </div>
     </div>
   </div>

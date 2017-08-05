@@ -14,28 +14,24 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-  <style>
-  body{
-    font-family: 'Raleway', sans-serif;
-  }
-
-
-  </style>
+  <link rel="stylesheet" type="text/css" href="/assets/css/page_post.css">
 </head>
 
 <html>
   <body>
     {% include navbar.html %}
 
+    <div class="jumbotron">
+      <div>
+        <h3>{{ page.title }}</h3>
+        <p><small>Post Time: {{ page.date | date: '%a, %b %-d, %Y %R' }}</small></p>
+        <p><small>Category: <a href="#">{{ page.category }}</a></small></p>
+      </div>
+    </div>
+
     <div>
       <article class="p-5">
-        <h3>{{ page.title }}</h3>
-        <p>Post Time: {{ page.date | date: '%a, %b %-d, %Y %R' }}</p>
-        <p>Category: <a href="#">{{ page.category }}</a></p>
-        <div>
         {{ content }}
-        </div>
       </article>
     </div>
 

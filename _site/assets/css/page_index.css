@@ -26,34 +26,6 @@ body{
 }
 
 
-.navbar-outline{
-  margin: 0;
-  padding: 0 5% 0 0;
-}
-
-.navbar-non-collapse{
-  margin: 0;
-  padding: 2px 2% 2px 2%;
-  background-color: black;
-  border-radius: 25px 25px 0 0;
-}
-
-ul.navbar-nav a{
-  color: white;
-}
-
-ul.navbar-nav a:hover{
-  color: gray;
-}
-
-.divider{
-  margin-top: 0;
-  margin-bottom: 5%;
-  padding: 1px;
-  background-color: black;
-  display: block;
-}
-
 .about{
   border: double black;
   border-radius: 3px;

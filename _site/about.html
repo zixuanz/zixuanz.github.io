@@ -31,52 +31,80 @@
 
 <html>
 <body>
-  <style>
-  .navbar-outline{
-    margin-top: 0;
-    padding: 0 5% 0 0;
-  }
+  
 
-  .navbar-non-collapse{
-    margin: 0;
-    padding: 2px 2% 2px 2%;
-    background-color: black;
-    border-radius: 0 0 25px 25px;
-  }
+<style>
 
-  ul.navbar-nav a{
+#navbar ul{
+  width: 21rem;
+  margin: 0;
+  padding: 0;
+  position: -webkit-sitcky;
+  position: sticky;
+  left:70%;
+  background-color: black;
+  border-radius: 0 0 1rem 1rem;
+}
+
+#navbar ul li{
+  display: inline-flex;
+}
+
+#navbar ul li a {
+    text-align: center;
     color: white;
-  }
+}
 
-  ul.navbar-nav a:hover{
-    color: gray;
-  }
+#navbar ul li a:hover{
+  color: gray;
+}
 
-  .divider{
-    margin-top: 2%;
-    margin-bottom: 0;;
-    padding: 1px;
-    background-color: black;
-    display: block;
+.nav-divider{
+  margin-bottom: 0;
+  padding: 1px;
+  background-color: black;
+  display: block;
+}
+
+.sticky-top{
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+
+@media (max-width: 768px){
+  #navbar ul{
+    margin: auto;
+    left:auto;
   }
+}
 </style>
 
-<div class="divider"></div>
+<div class="nav-divider sticky-top"></div>
+<div id="navbar" class="sticky-top">
+  <ul>
+    <li class="nav-item"><a href="http://localhost:4000/index.html" class="nav-link">Home</a></li>
+    <li class="nav-item"><a href="http://localhost:4000/projects.html" class="nav-link">Projects</a></li>
+    <!--
+    <li class="nav-item"><a href="http://localhost:4000/blogs.html" class="nav-link">Blogs</a></li>
+    <li class="nav-item"><a href="http://localhost:4000/about.html" class="nav-link">About</a></li>
+  -->
+  </ul>
+</div>
+<!--
 <nav class="navbar navbar-toggleable-sm navbar-outline sticky-top">
-  <button class="navbar-light navbar-toggler navbar-toggler-right navbar-text" type="button" data-toggle="collapse" data-target="#navbar_menu" aria-controls="navbar_menu" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
   <div class="collapse navbar-collapse" id="navbar_menu">
-    <ul class="navbar-nav ml-auto navbar-non-collapse">
+    <ul class="navbar-nav ml-auto">
       <li class="nav-item"><a href="http://localhost:4000/index.html" class="nav-link">Home</a></li>
       <li class="nav-item"><a href="http://localhost:4000/projects.html" class="nav-link">Projects</a></li>
-      <!--
+
       <li class="nav-item"><a href="http://localhost:4000/blogs.html" class="nav-link">Blogs</a></li>
       <li class="nav-item"><a href="http://localhost:4000/about.html" class="nav-link">About</a></li>
-    -->
     </ul>
   </div>
 </nav>
+-->
 
 
   <div class="container-fluid">
@@ -116,7 +144,7 @@
   <a href="https://github.com/zixuanz">
     <i class="fa fa-github social-fa"></i>
   </a>
-  <a href="#">
+  <a href="https://www.linkedin.com/in/zixuan-zhao-425b03b6?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BTSmjWae8RMaUqDwarYh7eg%3D%3D">
     <i class="fa fa-linkedin-square social-fa"></i>
   </a>
   <a href="#">

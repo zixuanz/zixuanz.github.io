@@ -3,7 +3,7 @@
     {
       "name":"Plain Text Reader",
       "pic":"/assets/img/pro_Txt_Reader_App_sm.png",
-      "description":"dd",
+      "description":"An Android application for reading txt file.",
       "source":"https://github.com/zixuanz/Android-App----PlainTextReader",
       "tags":[
         "Android"
@@ -13,7 +13,7 @@
     {
       "name":"Diary Writing Application",
       "pic":"/assets/img/pro_Diary_Writing_App_sm.png",
-      "description":"dd",
+      "description":"An Android application to write diaries locked by password.",
       "source":"#",
       "tags":[
         "Android", "Sqlite"
@@ -23,7 +23,7 @@
     {
       "name":"Local Weather Application",
       "pic":"/assets/img/pro_Local_Weather_App_sm.png",
-      "description":"dd",
+      "description":"Display local weather information based on aquired location.",
       "source":"https://codepen.io/zixuanz/full/QvvNje/",
       "tags":[
         "Web", "Html", "JS", "CSS"
@@ -33,7 +33,7 @@
     {
       "name":"Wikipedia Viewer",
       "pic":"/assets/img/pro_Wiki_Viewer_sm.png",
-      "description":"dd",
+      "description":"Display wikipedia page by searching keywords or picking up random one.",
       "source":"https://codepen.io/zixuanz/full/QvvNje/",
       "tags":[
         "Web", "Html", "JS", "CSS"

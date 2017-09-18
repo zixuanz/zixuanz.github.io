@@ -19,6 +19,7 @@
 
 <html>
   <body>
+    <!--Section Navbar-->
     
 
 <style>
@@ -95,6 +96,7 @@
 -->
 
 
+    <!--Section Jumbotron-->
     <div class="jumbotron">
       <div>
         <h3>Install Multiple Versions of Python on Mac</h3>
@@ -103,9 +105,11 @@
       </div>
     </div>
 
+    <!--Main Area-->
     <div class="container-fluid">
-      <div class="row blog-box">
-        <div class="col-md-8">
+      <div class="row">
+        <!--SubSection for Blog Content-->
+        <div class="col-md-8" id="blog_content">
           <article class="p-5">
             <h6 id="table-of-contents">Table of Contents</h6>
 <ul>
@@ -255,18 +259,21 @@
           </article>
         </div>
 
+        <!--SubSection for Blog Content-->
         <div class="col-md-4 PageNavigation">
-          <div class="d-flex">
-            
-            <div class="triangle-left">
+          <div id="relative_blogs">
+            <div class="d-flex" id="prev_blog">
+              
+              <div class="triangle-left">
+              </div>
+              <div class="relative-box" style="border-radius: 0 0.2rem 0.2rem 0;">
+                <a class="prev align-middle" href="/blog/2017/05/16/My-First-Blog">My First Blog</a>
+              </div>
+              
             </div>
-            <div class="prev-box">
-              <a class="prev align-middle" href="/blog/2017/05/16/My-First-Blog">My First Blog</a>
+            <div class="d-flex" id="next_blog">
+              
             </div>
-            
-          </div>
-          <div class="d-flex ml-5">
-            
           </div>
         </div>
       </div>

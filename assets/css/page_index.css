@@ -38,6 +38,7 @@ body{
 }
 
 #intro_space{
+  position: -webkit-sitcky;
   position: sticky;
   top: 20%;
 }

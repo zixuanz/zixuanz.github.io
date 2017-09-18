@@ -26,13 +26,18 @@ body{
 }
 
 
-.about{
+.deco{
   border: double black;
   border-radius: 3px;
 }
 
-.blog-space{
+#blog_space{
   padding-left: 3%;
   padding-right: 3%;
   width: 100%;
+}
+
+#intro_space{
+  position: sticky;
+  top: 20%;
 }

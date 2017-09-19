@@ -18,26 +18,36 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <style>
-  body{
-    font-family: 'Raleway', sans-serif;
-  }
-
-  .jumbotron{
-    background-color: white;
-    padding-left: 10%;
-  }
-
-  .blog-space{
-    padding-left: 3%;
-    padding-right: 3%;
-  }
-
-  </style>
+  <!--Customized Stylesheet-->
+  <link rel="stylesheet" href="assets/css/page_blogs.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/blogs_style.css" type="text/css">
 </head>
 
 <html>
 <body>
+  <!--
+  Summary tags and categories.
+  Reletive nippets from https://codinfox.github.io/dev/2015/03/06/use-tags-and-categories-in-your-jekyll-based-github-pages/
+  -->
+  {% assign rawtags = "" %}
+  {% for post in site.posts %}
+    {% assign ttags = post.tags | join:'|' | append:'|' %}
+    {% assign rawtags = rawtags | append:ttags %}
+  {% endfor %}
+  {% assign rawtags = rawtags | split:'|' | sort %}
+  {% assign tags = "" %}
+  {% for tag in rawtags %}
+    {% if tag != "" %}
+      {% if tags == "" %}
+        {% assign tags = tag | split:'|' %}
+      {% endif %}
+      {% unless tags contains tag %}
+        {% assign tags = tags | join:'|' | append:'|' | append:tag | split:'|' %}
+      {% endunless %}
+    {% endif %}
+  {% endfor %}
+
+
   <!--Section Navbar-->
   {% include navbar.html %}
 
@@ -52,22 +62,89 @@
     <!--Subsection blogs-->
     <div class="row">
       <div class="col-md-8 blog-space">
-        {% include post_list.html %}
+
+        <!--All Blogs-->
+        <div id="section_all">
+          <ul>
+            {% for post in site.posts %}
+            <li>
+              <a class="blog-title" href="{{ post.url }}">{{ post.title }}</a>
+              <span class="date-cat-style">Date: {{ post.date | date_to_string }} | Category: {{ post.categories }}</span>
+              <p>
+                {% for tag in post.tags %}
+                <a class="tag-style" href="#tag_{{ tag | slugify }}">#{{ tag }}</a>
+                {% endfor %}
+              </p>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <!--Categories Blogs-->
+        <div id="section_category">
+          cat
+        </div>
+
+        <!--Tags Blogs-->
+        <div id="section_tag">
+          {% for tag in tags %}
+          <small class="tag-style" id="tag_{{ tag | slugify }}">#{{ tag }}</small>
+          <ul>
+          {% for post in site.posts %}
+            {% if post.tags contains tag %}
+            <li>
+              <a class="blog-title" href="{{ post.url }}">{{ post.title }}</a>
+              <span class="date-cat-style">Date: {{ post.date | date_to_string }} | Category: {{ post.categories }}</span>
+            </li>
+            {% endif %}
+          {% endfor %}
+          </ul>
+          {% endfor %}
+        </div>
+
       </div>
 
       <!--Subsection find blog by-->
       <div class="col-md-4">
-        <div>
-          <div class="list-group">
-            <a href="#" class="list-group-item active">
-              Cras justo odio
-            </a>
-            <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-            <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-            <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-            <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
+        <div class="panel-group" id="accordion">
+
+          <!--Panel All-->
+          <div class="panel">
+            <div class="panel-heading">
+              <a id="alla" data-toggle="collapse" data-parent="#accordion" href="#all">All Blogs</a>
+            </div>
+            <div id="all" class="panel-collapse collapse in">
+
+            </div>
+          </div>
+
+          <!--Panel Category-->
+          <div class="panel">
+            <div class="panel-heading">
+              <a id="cata" data-toggle="collapse" data-parent="#accordion" href="#categories">Categories</a>
+            </div>
+            <div id="categories" class="panel-collapse collapse in">
+              <div class="panel-body">
+                Categories
+              </div>
+            </div>
+          </div>
+
+          <!--Panel Tag-->
+          <div class="panel">
+            <div class="panel-heading">
+              <a id="taga" data-toggle="collapse" data-parent="#accordion" href="#tags">Tags</a>
+            </div>
+            <div id="tags" class="panel-collapse collapse">
+              <div class="panel-body">
+                {% for tag in tags %}
+                  <a href="#tag_{{ tag | slugify }}"> #{{ tag }} </a>
+                {% endfor %}
+              </div>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -75,5 +152,38 @@
   <!--Section Footer-->
   {% include footer.html %}
 
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <script>
+
+    $("document").ready(function(){
+      $("#alla").click(function(){
+        toggleCollapse("#section_all");
+      });
+      $("#cata").click(function(){
+        toggleCollapse("#section_category");
+      });
+      $("#taga").click(function(){
+        toggleCollapse("#section_tag");
+      });
+      $(".tag-style").click(function(){
+        console.log("blog-space");
+        toggleCollapse("#section_tag");
+        $("#tags").collapse("show");
+      });
+
+    });
+
+    var currShow = "#section_all";
+    function toggleCollapse(panel){
+      if(currShow !== panel){
+        $(panel).show();
+        $(currShow).hide();
+        currShow = panel;
+      }
+    };
+
+  </script>
 </body>
 </html>

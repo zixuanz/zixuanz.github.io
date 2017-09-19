@@ -27,7 +27,7 @@ body{
 }
 
 #relative_blogs{
-  position: -webkit-sitcky;
+  position: -webkit-sticky;
   position: sticky;
   top: 35%;
   margin-top: 30%;

@@ -38,7 +38,7 @@ body{
 }
 
 #intro_space{
-  position: -webkit-sitcky;
+  position: -webkit-sticky;
   position: sticky;
   top: 20%;
 }

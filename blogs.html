@@ -47,6 +47,24 @@
     {% endif %}
   {% endfor %}
 
+  {% assign rawcats = "" %}
+  {% for post in site.posts %}
+    {% assign tcats = post.category | join:'|' | append:'|' %}
+    {% assign rawcats = rawcats | append:tcats %}
+  {% endfor %}
+  {% assign rawcats = rawcats | split:'|' | sort %}
+  {% assign cats = "" %}
+  {% for cat in rawcats %}
+    {% if cat != "" %}
+      {% if cats == "" %}
+        {% assign cats = cat | split:'|' %}
+      {% endif %}
+      {% unless cats contains cat %}
+        {% assign cats = cats | join:'|' | append:'|' | append:cat | split:'|' %}
+      {% endunless %}
+    {% endif %}
+  {% endfor %}
+
 
   <!--Section Navbar-->
   {% include navbar.html %}
@@ -58,18 +76,62 @@
 
   <!--Section Blogs-->
   <div class="container-fluid">
-
-    <!--Subsection blogs-->
     <div class="row">
-      <div class="col-md-8 blog-space">
 
+      <!--Subsection find blog by-->
+      <div class="col-md-4 push-md-8">
+        <div class="panel-group" id="accordion">
+
+          <!--Panel All-->
+          <div class="panel">
+            <div class="panel-heading">
+              <a id="alla" data-toggle="collapse" data-parent="#accordion" href="#all"><i style="font-size: 0.8rem;" class="material-icons">star</i> All Blogs</a>
+            </div>
+            <div id="all" class="panel-collapse collapse in">
+
+            </div>
+          </div>
+
+          <!--Panel Category-->
+          <div class="panel">
+            <div class="panel-heading">
+              <a id="cata" data-toggle="collapse" data-parent="#accordion" href="#categories"><i style="font-size: 0.8rem;" class="material-icons">star</i> Categories</a>
+            </div>
+            <div id="categories" class="panel-collapse collapse in">
+              <div class="panel-body">
+                {% for cat in cats %}
+                <a href="#cat_{{ cat | slugify }}"><i style="font-size:0.8rem;"class="material-icons">bookmark</i>{{ cat }}</a>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+
+          <!--Panel Tag-->
+          <div class="panel">
+            <div class="panel-heading">
+              <a id="taga" data-toggle="collapse" data-parent="#accordion" href="#tags"><i style="font-size: 0.8rem;" class="material-icons">star</i> Tags</a>
+            </div>
+            <div id="tags" class="panel-collapse collapse">
+              <div class="panel-body">
+                {% for tag in tags %}
+                  <a href="#tag_{{ tag | slugify }}"> #{{ tag }} </a>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Blog Links Area-->
+      <div class="col-md-8 pull-md-4 blog-space">
         <!--All Blogs-->
         <div id="section_all">
           <ul>
             {% for post in site.posts %}
             <li>
               <a class="blog-title" href="{{ post.url }}">{{ post.title }}</a>
-              <span class="date-cat-style">Date: {{ post.date | date_to_string }} | Category: {{ post.categories }}</span>
+              <span class="date-cat-style">Date: {{ post.date | date_to_string }} | Category: <a class="category-style" href="#cat_{{ post.category }}">{{ post.category }}</a></span>
               <p>
                 {% for tag in post.tags %}
                 <a class="tag-style" href="#tag_{{ tag | slugify }}">#{{ tag }}</a>
@@ -82,7 +144,24 @@
 
         <!--Categories Blogs-->
         <div id="section_category">
-          cat
+          {% for cat in cats %}
+          <small id="cat_{{ cat | slugify }}">{{ cat }}</small>
+          <ul>
+          {% for post in site.posts %}
+            {% if post.category contains cat %}
+            <li>
+              <a class="blog-title" href="{{ post.url }}">{{ post.title }}</a>
+              <span class="date-cat-style">Date: {{ post.date | date_to_string }} | Category: <a class="category-style" href="#cat_{{ post.category }}">{{ post.category }}</a></span>
+              <p>
+                {% for tag in post.tags %}
+                <a class="tag-style" href="#tag_{{ tag | slugify }}">#{{ tag }}</a>
+                {% endfor %}
+              </p>
+            </li>
+            {% endif %}
+          {% endfor %}
+          </ul>
+          {% endfor %}
         </div>
 
         <!--Tags Blogs-->
@@ -94,8 +173,13 @@
             {% if post.tags contains tag %}
             <li>
               <a class="blog-title" href="{{ post.url }}">{{ post.title }}</a>
-              <span class="date-cat-style">Date: {{ post.date | date_to_string }} | Category: {{ post.categories }}</span>
+              <span class="date-cat-style">Date: {{ post.date | date_to_string }} | Category: <a class="category-style" href="#cat_{{ post.category }}">{{ post.category }}</a></span>
             </li>
+            <p>
+              {% for tag in post.tags %}
+              <a class="tag-style" href="#tag_{{ tag | slugify }}">#{{ tag }}</a>
+              {% endfor %}
+            </p>
             {% endif %}
           {% endfor %}
           </ul>
@@ -104,48 +188,6 @@
 
       </div>
 
-      <!--Subsection find blog by-->
-      <div class="col-md-4">
-        <div class="panel-group" id="accordion">
-
-          <!--Panel All-->
-          <div class="panel">
-            <div class="panel-heading">
-              <a id="alla" data-toggle="collapse" data-parent="#accordion" href="#all">All Blogs</a>
-            </div>
-            <div id="all" class="panel-collapse collapse in">
-
-            </div>
-          </div>
-
-          <!--Panel Category-->
-          <div class="panel">
-            <div class="panel-heading">
-              <a id="cata" data-toggle="collapse" data-parent="#accordion" href="#categories">Categories</a>
-            </div>
-            <div id="categories" class="panel-collapse collapse in">
-              <div class="panel-body">
-                Categories
-              </div>
-            </div>
-          </div>
-
-          <!--Panel Tag-->
-          <div class="panel">
-            <div class="panel-heading">
-              <a id="taga" data-toggle="collapse" data-parent="#accordion" href="#tags">Tags</a>
-            </div>
-            <div id="tags" class="panel-collapse collapse">
-              <div class="panel-body">
-                {% for tag in tags %}
-                  <a href="#tag_{{ tag | slugify }}"> #{{ tag }} </a>
-                {% endfor %}
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
     </div>
   </div>
 
@@ -158,6 +200,18 @@
   <script>
 
     $("document").ready(function(){
+      var urlSplit = window.location.href.split('#');
+      var id = urlSplit[urlSplit.length -1];
+      if(id.startsWith("cat_")){
+        toggleCollapse("#section_category");
+        $("#categories").collapse("show");
+        window.location="#"+id;
+      }else if(id.startsWith("tag_")){
+        toggleCollapse("#section_tag");
+        $("#tags").collapse("show");
+        window.location="#"+id;
+      }
+
       $("#alla").click(function(){
         toggleCollapse("#section_all");
       });
@@ -167,19 +221,26 @@
       $("#taga").click(function(){
         toggleCollapse("#section_tag");
       });
+
+      $(".category-style").click(function(){
+        console.log("category-space");
+        toggleCollapse("#section_category");
+        $("#categories").collapse("show");
+      })
       $(".tag-style").click(function(){
-        console.log("blog-space");
+        console.log("tag-space");
         toggleCollapse("#section_tag");
         $("#tags").collapse("show");
       });
+
 
     });
 
     var currShow = "#section_all";
     function toggleCollapse(panel){
       if(currShow !== panel){
-        $(panel).show();
-        $(currShow).hide();
+        $(panel).toggle();
+        $(currShow).toggle();
         currShow = panel;
       }
     };

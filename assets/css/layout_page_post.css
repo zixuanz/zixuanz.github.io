@@ -46,7 +46,9 @@ body{
 }
 
 .relative-box a:hover{
-  color: gray;
+  padding-left: 5%;
+  color: white;
+  text-decoration: none;
 }
 
 #prev_blog{

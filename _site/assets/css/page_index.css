@@ -8,7 +8,7 @@ body{
   background-color: white;
 }
 
-.flex-row{
+.jumbotron .flex-row{
   margin-left: 10%;
 }
 
@@ -25,20 +25,59 @@ body{
   margin: 2px;
 }
 
-
 .deco{
   border: double black;
   border-radius: 3px;
-}
-
-#blog_space{
-  padding-left: 3%;
-  padding-right: 3%;
-  width: 100%;
 }
 
 #intro_space{
   position: -webkit-sticky;
   position: sticky;
   top: 20%;
+}
+
+#blog_space{
+  margin-left: 5%;
+}
+
+.date-outbox{
+  margin-right: 0;
+  margin-top: 5%;
+}
+
+.date-box{
+  margin: 0;
+  border-top: double black;
+  border-left: double black;
+  border-bottom: double black;
+  border-radius: 2px 0 0 2px;
+}
+
+.date-box > p{
+  margin: 2px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.post-box{
+  padding: 2%;
+  border-left: double black;
+  width: 100%;
+}
+
+.arrow-left{
+  margin-left: 30%;
+}
+
+.arrow-right{
+  margin-right: 30%;
+}
+
+.pagination i{
+  padding-left: 20%;
+  padding-right: 20%;
+  border-radius: 2px;
+  background-color: black;
+  color: white;
+  font-size: 1.5rem;
 }

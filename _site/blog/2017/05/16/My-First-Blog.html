@@ -14,7 +14,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="/assets/css/page_post.css">
+
+  <!--Customized StyleSheet-->
+  <link rel="stylesheet" href="/assets/css/layout_page_post.css" type="text/css">
+  <link rel="stylesheet" href="/assets/css/blogs_style.css" type="text/css">
 </head>
 
 <html>
@@ -45,7 +48,8 @@
 }
 
 #navbar ul li a:hover{
-  color: gray;
+  color: white;
+  font-style: italic;
 }
 
 .nav-divider{
@@ -73,10 +77,10 @@
 <div class="nav-divider sticky-top"></div>
 <div id="navbar" class="sticky-top">
   <ul>
-    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-    <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
-    <li class="nav-item"><a href="blogs.html" class="nav-link">Blogs</a></li>
-    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+    <li class="nav-item"><a href="/index.html" class="nav-link">Home</a></li>
+    <li class="nav-item"><a href="/projects.html" class="nav-link">Projects</a></li>
+    <li class="nav-item"><a href="/blogs.html" class="nav-link">Blogs</a></li>
+    <li class="nav-item"><a href="/about.html" class="nav-link">About</a></li>
   </ul>
 </div>
 <!--
@@ -99,7 +103,16 @@
       <div>
         <h3>My First Blog</h3>
         <p><small>Post Time: Tue, May 16, 2017 23:42</small></p>
-        <p><small>Category: <a href="#">Web</a></small></p>
+        <p>
+          <small>Category:</small>
+          <a class="category-style" href="/blogs.html#cat_">Web</a> |</span>
+          
+            <a class="tag-style" href="/blogs.html#tag_github-page">#Github page</a>
+          
+            <a class="tag-style" href="/blogs.html#tag_jekyll">#Jekyll</a>
+          
+        </p>
+
       </div>
     </div>
 

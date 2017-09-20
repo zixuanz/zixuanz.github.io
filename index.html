@@ -22,6 +22,7 @@
 
     <!--Customized CSS Stylesheet-->
     <link rel="stylesheet" href="/assets/css/page_index.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/blogs_style.css" type="text/css">
 
   </head>
 
@@ -62,28 +63,116 @@
     <div class="container-fluid" style="margin-top: 5%;">
 
       <div class="row">
-        <!--SubSection Blog-->
-        <div class="col-md-8" id="blog_space">
-          {% include post_list.html %}
-        </div>
         <!--SubSection General About-->
-        <div class="col-md-4 text-center">
+        <div class="col-md-4 push-md-8 text-center">
           <div id="intro_space">
             <div class="deco m-5 p3">
             </div>
-
             <article class="deco m-5 p-3">
               <h5>Welcome!</h5>
               <p>Hello everyone! This is ZixuanZ's blog. I will write down what I learned in my work and share my views here. Hope you enjoy here. Thanks!</p>
               {% include social_links.html %}
             </article>
-
             <div class="deco m-5 p3">
             </div>
           </div>
-
-
         </div>
+
+        <!--SubSection Blog-->
+        <div class="col-md-8 pull-md-4">
+          <div id="blog_space">
+
+            <!-- Pagination links -->
+            <div class="pagination">
+              <!--Previous Page-->
+              <div class="mr-auto arrow-left">
+              {% if paginator.previous_page %}
+                <a href="{{ paginator.previous_page_path }}">
+                  <i class="material-icons">keyboard_arrow_left</i>
+                </a>
+              {% else %}
+                <i class="material-icons">keyboard_arrow_left</i>
+              {% endif %}
+              </div>
+
+              <!--Current Page NO. of Total-->
+              <span class="md-auto">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+              <!--Next Page-->
+              <div class="ml-auto arrow-right">
+              {% if paginator.next_page %}
+                <a href="{{ paginator.next_page_path }}">
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+              {% else %}
+                <i class="material-icons">keyboard_arrow_right</i>
+              {% endif %}
+              </div>
+            </div>
+
+            <!-- This loops through the paginated posts -->
+            <div style="margin-top: 5%; margin-bottom: 5%;">
+            {% for post in paginator.posts %}
+              <div class="d-flex flex-row">
+                <!--Section for Date-->
+                <div class="date-outbox">
+                  <div class="date-box">
+                    <p class="ml-auto">{{ post.date | date: '%b %-d' }}</p>
+                    <p class="ml-auto">{{ post.date | date: '%Y' }}</p>
+                  </div>
+                </div>
+
+                <!--Section for Post Content-->
+                <div class="post-box">
+                  <div class="title-box">
+                    <a class="blog-title" href="{{ post.url }}">{{ post.title }}</a>
+                    <p>
+                      <span class="date-cat-style">Category: <a class="category-style" href="blogs.html#cat_{{ post.category }}">{{ post.category }}</a> |</span>
+                      {% for tag in post.tags %}
+                        <a class="tag-style" href="blogs.html#tag_{{ tag | slugify }}">#{{ tag }}</a>
+                      {% endfor %}
+                    </p>
+                  </div>
+                  <div class="content">
+                    {{ post.content | truncatewords: 25 }}
+                    <a href="{{ post.url }}"><small class="pull-right text-muted">Read more</small></a>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+            </div>
+
+            <!-- Pagination links -->
+            <div class="pagination">
+              <!--Previous Page-->
+              <div class="mr-auto arrow-left">
+              {% if paginator.previous_page %}
+                <a href="{{ paginator.previous_page_path }}">
+                  <i class="material-icons">keyboard_arrow_left</i>
+                </a>
+              {% else %}
+                <i class="material-icons">keyboard_arrow_left</i>
+              {% endif %}
+              </div>
+
+              <!--Current Page NO. of Total-->
+              <span class="md-auto">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+              <!--Next Page-->
+              <div class="ml-auto arrow-right">
+              {% if paginator.next_page %}
+                <a href="{{ paginator.next_page_path }}">
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+              {% else %}
+                <i class="material-icons">keyboard_arrow_right</i>
+              {% endif %}
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </div>
 

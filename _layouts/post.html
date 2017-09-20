@@ -14,7 +14,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="/assets/css/page_post.css">
+
+  <!--Customized StyleSheet-->
+  <link rel="stylesheet" href="/assets/css/layout_page_post.css" type="text/css">
+  <link rel="stylesheet" href="/assets/css/blogs_style.css" type="text/css">
 </head>
 
 <html>
@@ -27,7 +30,14 @@
       <div>
         <h3>{{ page.title }}</h3>
         <p><small>Post Time: {{ page.date | date: '%a, %b %-d, %Y %R' }}</small></p>
-        <p><small>Category: <a href="#">{{ page.category }}</a></small></p>
+        <p>
+          <small>Category:</small>
+          <a class="category-style" href="/blogs.html#cat_{{ post.category }}">{{ page.category }}</a> |</span>
+          {% for tag in page.tags %}
+            <a class="tag-style" href="/blogs.html#tag_{{ tag | slugify }}">#{{ tag }}</a>
+          {% endfor %}
+        </p>
+
       </div>
     </div>
 

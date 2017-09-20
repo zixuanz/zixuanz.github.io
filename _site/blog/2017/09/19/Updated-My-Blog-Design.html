@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <head lang="en">
-  <title>My First Blog</title>
+  <title>Updated My Blog Design</title>
   <meta name="author" content="zixuanz">
   <meta name="description" content="My portfolio">
 
@@ -101,8 +101,8 @@
     <!--Section Jumbotron-->
     <div class="jumbotron">
       <div>
-        <h3>My First Blog</h3>
-        <p><small>Post Time: Tue, May 16, 2017 00:00</small></p>
+        <h3>Updated My Blog Design</h3>
+        <p><small>Post Time: Tue, Sep 19, 2017 00:00</small></p>
         <p>
           <small>Category:</small>
           <a class="category-style" href="/blogs.html#cat_">Web</a> |</span>
@@ -110,6 +110,8 @@
             <a class="tag-style" href="/blogs.html#tag_github-page">#Github page</a>
           
             <a class="tag-style" href="/blogs.html#tag_jekyll">#Jekyll</a>
+          
+            <a class="tag-style" href="/blogs.html#tag_css">#css</a>
           
         </p>
 
@@ -122,22 +124,24 @@
         <!--SubSection for Blog Content-->
         <div class="col-md-8" id="blog_content">
           <article class="p-5">
-            <p>I hope this is my last “First Blog”.</p>
+            <p>Well, I have to say, to write blog is difficult. Comparing with organizing and typing on computer, it is much more convenient to write pieces of knowledge on paper by hand. However, it is not the reason I do not update blog. I will try it next step.</p>
 
-<p>Well, until right now, I temporally completed design of index page.</p>
+<p>This time, I will talk about what I updated for my blog design.</p>
 
-<p>I had a serious problem which was I could not include a external css to html page correctly. I think that was caused by site.url settings. I could not get through it. Thus I decided just write style sheet into each pages. At least it was convenient for me to modify.</p>
+<p>Firstly, when I wrote my first blog article, I could not import css stylesheet. I gave an assumption that it may be caused by link error. However, I actually typed “rel” as “ref” in link and I could not check it out until really really long time ago. It taught me what “careful checking” is again. I still remember I laughed to myself at that time.</p>
 
-<p>What else I can do in index.html page:</p>
-<ul>
-  <li>The toggle button, which is for the collapsed navbar menu, will be modified to the similar style of webpage.</li>
-  <li>The collapsed menu is not good looking. I will try to have before-collapse and after-collapse design.</li>
-  <li>Navbar will be stick to top when scroll over it.</li>
-  <li>Create footer.html and include it in.</li>
-  <li>After all sections in index page are done, modify details such as how to show time.</li>
-</ul>
+<p>Secondly, I updated design for small viewport.</p>
 
-<p>Next, I will start styling post.html and write more and more blogs as well as use them for testing!</p>
+<ol>
+  <li>
+    <p>Navbar is used to be collapsed and toggled by a button in small viewport. Since my navbar is not too long comparing with the small devices screen width, I decided just keep it original looking but horizontal center under small viewport. It looks better than before. And It’s accidentally similar to iPhoneX right now. Well, it would be a very quick way to experience iPhoneX head in small screen devices (smile).</p>
+  </li>
+  <li>
+    <p>I adjusted order of some div when showed in small viewport so that they are in reasonable place. Since I applied Bootstrap and organize by their grid system, “pull-md-x” and “push-md-x” will be best choice to do that. I think I will talk about it in another article later.</p>
+  </li>
+</ol>
+
+<p>Thirdly, I styled blog including title, date, category and tag. At the same time, complete building up blog page, which allows user to check blogs by category and tags. I followed <a href="&quot;https://codinfox.github.io/dev/2015/03/06/use-tags-and-categories-in-your-jekyll-based-github-pages/&quot;">this solution</a> to get all tags and categories without plugin. I think it provides more flexible customization.</p>
 
           </article>
         </div>
@@ -147,14 +151,14 @@
           <div id="relative_blogs">
             <div class="d-flex" id="prev_blog">
               
+              <div class="triangle-left">
+              </div>
+              <div class="relative-box" style="border-radius: 0 0.2rem 0.2rem 0;">
+                <a class="prev align-middle" href="/blog/2017/05/21/Install-Multiple-Versions-of-Python-on-Mac">Install Multiple Versions of Python on Mac</a>
+              </div>
+              
             </div>
             <div class="d-flex" id="next_blog">
-              
-              <div class="relative-box" style="border-radius: 0.2rem 0 0 0.2rem;">
-                <a class="next" href="/blog/2017/05/21/Install-Multiple-Versions-of-Python-on-Mac">Install Multiple Versions of Python on Mac</a>
-              </div>
-              <div class="triangle-right">
-              </div>
               
             </div>
           </div>

@@ -18,19 +18,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <style>
-  body{
-    font-family: 'Raleway', sans-serif;
-  }
-  .jumbotron{
-    background-color: white;
-    padding-left: 10%;
-  }
-  .avatar-md{
-    width: 100px;
-    height: 100px;
-  }
-  </style>
+  <!--Customized StyleSheet-->
+  <link rel="stylesheet" href="/assets/css/page_about.css" type="text/css">
+
 </head>
 
 <html>
@@ -38,15 +28,50 @@
   {% include navbar.html %}
 
   <div class="container-fluid">
-    <div>
-      <img class="avatar-md m-2 img-thumbnail" src="https://avatars3.githubusercontent.com/u/6519274?v=3&s=400">
-    </div>
-    <article>
-      Hello! I am Zixuan.
-    </article>
+
+    <table>
+      <tr>
+        <td></td>
+        <td colspan="3" style="font-size: 3rem;">Computer Science</td>
+        <td style="color: #adadad;">Premiere Pro</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="font-size: 1.2rem; font-style: italic;">Java8 Associate certification</td>
+        <td></td>
+        <td style="color: #515151">MySql</td>
+        <td style="font-size: 1.8rem;">Windows</td>
+      </tr>
+      <tr>
+        <td style="font-size: 1.3rem; ">Python</td>
+        <td style="font-size: 5rem; font-weight: bold;">Java</td>
+        <td>
+          <div>
+            <img class="avatar-md m-2 img-thumbnail" src="https://avatars3.githubusercontent.com/u/6519274?v=3&s=400">
+          </div>
+        </td>
+        <td colspan="2" style="font-size: 1.3rem;">Software Development</td>
+      </tr>
+      <tr>
+        <td style="color: #515151;">Program</td>
+        <td></td>
+        <td style="font-size: 3rem; color: #828282;">OOP</td>
+        <td></td>
+        <td style="font-size: 2.2rem;">Android</td>
+      </tr>
+      <tr>
+        <td style=""></td>
+        <td colspan="2" style="font-size: 1.5rem; font-weight: bolder;">Oregon State University</td>
+        <td style="font-size: 1.1rem; font-style: italic; color: #828282;">Mac OS</td>
+        <td style="font-size: 1.5rem;">HTML, JS, CSS</td>
+      </tr>
+    </table>
   </div>
 
   <!--Section Footer-->
   {% include footer.html %}
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  
 </body>
 </html>

@@ -30,14 +30,28 @@
 
     <!--Section Jumbotron-->
     <div class="jumbotron">
-      <div class="d-flex flex-row align-items-center">
-        <img class="avatar-md m-2 img-thumbnail" src="https://avatars3.githubusercontent.com/u/6519274?v=3&s=400">
-        <div class="intro-box m-3 p-4">
-          <h2>Zixuan Z</h2>
-          <p>Web Android</p>
-          {% include social_links.html %}
+      <div class="start">
+        <div class="d-flex flex-row align-items-center">
+          <img class="avatar-md m-2 img-thumbnail" src="https://avatars3.githubusercontent.com/u/6519274?v=3&s=400">
+          <div class="intro-box m-3 p-4">
+            <h2>Zixuan Z</h2>
+            <p>Web Android</p>
+            {% include social_links.html %}
+          </div>
         </div>
       </div>
+
+      <div class="mobile-start">
+        <div>
+          <img class="avatar-md m-2 img-thumbnail mx-auto d-block" src="https://avatars3.githubusercontent.com/u/6519274?v=3&s=400">
+          <div class="mobile-intro-box">
+            <h4>Zixuan Z</h4>
+            <p>Web Android</p>
+            {% include social_links.html %}
+          </div>
+        </div>
+      </div>
+
     </div>
 
 
@@ -66,14 +80,14 @@
         <!--SubSection General About-->
         <div class="col-md-4 push-md-8 text-center">
           <div id="intro_space">
-            <div class="deco m-5 p3">
+            <div class="deco mb-4">
             </div>
-            <article class="deco m-5 p-3">
+            <article class="deco p-3 ml-5 mr-5">
               <h5>Welcome!</h5>
               <p>Hello everyone! This is ZixuanZ's blog. I will write down what I learned in my work and share my views here. Hope you enjoy here. Thanks!</p>
               {% include social_links.html %}
             </article>
-            <div class="deco m-5 p3">
+            <div class="deco mt-4">
             </div>
           </div>
         </div>
@@ -113,21 +127,14 @@
             <!-- This loops through the paginated posts -->
             <div style="margin-top: 5%; margin-bottom: 5%;">
             {% for post in paginator.posts %}
-              <div class="d-flex flex-row">
-                <!--Section for Date-->
-                <div class="date-outbox">
-                  <div class="date-box">
-                    <p class="ml-auto">{{ post.date | date: '%b %-d' }}</p>
-                    <p class="ml-auto">{{ post.date | date: '%Y' }}</p>
-                  </div>
-                </div>
-
-                <!--Section for Post Content-->
+              <div>
+                <div class="post-deco-top"></div>
+                <div class="post-deco-bottom"></div>
                 <div class="post-box">
                   <div class="title-box">
                     <a class="blog-title" href="{{ post.url }}">{{ post.title }}</a>
                     <p>
-                      <span class="date-cat-style">Category: <a class="category-style" href="blogs.html#cat_{{ post.category }}">{{ post.category }}</a> |</span>
+                      <span class="date-cat-style">Date: {{ post.date | date: '%b %-d %Y' }} | Category: <a class="category-style" href="blogs.html#cat_{{ post.category }}">{{ post.category }}</a> | Tags: </span>
                       {% for tag in post.tags %}
                         <a class="tag-style" href="blogs.html#tag_{{ tag | slugify }}">#{{ tag }}</a>
                       {% endfor %}
@@ -140,6 +147,8 @@
                 </div>
               </div>
             {% endfor %}
+            <div class="post-deco-top"></div>
+            <div class="post-deco-bottom"></div>
             </div>
 
             <!-- Pagination links -->
@@ -174,7 +183,9 @@
         </div>
 
       </div>
+
     </div>
+
 
     <!--Seciton Sidebar for Scroll up-->
     {% include asidebar.html %}

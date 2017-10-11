@@ -14,7 +14,7 @@
       "name":"Diary Writing Application",
       "pic":"/assets/img/pro_Diary_Writing_App_sm.png",
       "description":"An Android application to write diaries locked by password.",
-      "source":"#",
+      "source":"https://github.com/zixuanz/Android-Diary-Application",
       "tags":[
         "Android", "Sqlite"
       ],
@@ -34,7 +34,7 @@
       "name":"Wikipedia Viewer",
       "pic":"/assets/img/pro_Wiki_Viewer_sm.png",
       "description":"Display wikipedia page by searching keywords or picking up random one.",
-      "source":"https://codepen.io/zixuanz/full/QvvNje/",
+      "source":"https://codepen.io/zixuanz/full/EmveZO/",
       "tags":[
         "Web", "Html", "JS", "CSS"
       ],

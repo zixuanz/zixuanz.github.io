@@ -8,6 +8,14 @@ body{
   background-color: white;
 }
 
+.start{
+  display: block;
+}
+
+.mobile-start{
+  display: none;
+}
+
 .jumbotron .flex-row{
   margin-left: 10%;
 }
@@ -26,6 +34,8 @@ body{
 }
 
 .deco{
+  margin-left: 5%;
+  margin-right: 5%;
   border: double black;
   border-radius: 3px;
 }
@@ -40,29 +50,28 @@ body{
   margin-left: 5%;
 }
 
-.date-outbox{
-  margin-right: 0;
-  margin-top: 5%;
-}
-
-.date-box{
+.post-deco-top{
+  height: 5px;
   margin: 0;
-  border-top: double black;
-  border-left: double black;
-  border-bottom: double black;
-  border-radius: 2px 0 0 2px;
+  padding: 0;
+  border-bottom: 1.5px solid black;
+  border-left: 1.5px solid black;
+  border-right: 1.5px solid black;
 }
 
-.date-box > p{
-  margin: 2px;
-  padding-left: 15px;
-  padding-right: 15px;
+.post-deco-bottom{
+  height: 5px;
+  margin: 0;
+  padding: 0;
+  border-left: 1.5px solid black;
+  border-right: 1.5px solid black;
 }
 
 .post-box{
   padding: 2%;
-  border-left: double black;
   width: 100%;
+  border-left: 1.5px dotted black;
+  border-right: 1.5px dotted black;
 }
 
 .arrow-left{
@@ -80,4 +89,32 @@ body{
   background-color: black;
   color: white;
   font-size: 1.5rem;
+}
+
+
+@media (max-width: 768px){
+  .mobile-start{
+    display: block;
+  }
+
+  .start{
+    display: none;
+  }
+
+  .mobile-intro-box{
+    text-align: center;
+    margin-bottom: 3%;
+  }
+
+  #intro_space{
+    top: 0;
+    position: inherit;
+  }
+
+  #blog_space{
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
 }

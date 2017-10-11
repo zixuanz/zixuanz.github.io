@@ -3,7 +3,7 @@ layout: post
 title:  "Updated My Blog Design"
 category: Web
 date: 2017-09-19
-tags: [Github page, Jekyll, css, ]
+tags: [Github page, Jekyll, CSS, ]
 ---
 
 Well, I have to say, to write blog is difficult. Comparing with organizing and typing on computer, it is much more convenient to write pieces of knowledge on paper by hand. However, it is not the reason I do not update blog. I will try it next step.

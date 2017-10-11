@@ -54,7 +54,7 @@
               <div class="p-3">
                 <h4 class="card-title">{{ project.name }}</h4>
                 <p class="card-text">{{ project.description }}</p>
-                <p><a href="{{ project.source }}">Source Code</a></p>
+                <p><a target="_blank" href="{{ project.source }}">Source Code</a></p>
                 <p class="card-text ml-auto">
                   {% for tag in project.tags %}
                   <small class="text-muted">{{ tag }}</small>

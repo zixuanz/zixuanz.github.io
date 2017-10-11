@@ -14,18 +14,9 @@ body{
   padding-right: 3%;
 }
 
-#section_all{
-
-}
-
-#section_category{
+.bloglist-group .bloglist{
   display: none;
 }
-
-#section_tag{
-  display: none;
-}
-
 
 .panel-group{
   position: -webkit-sticky;

@@ -12,11 +12,13 @@ body{
 }
 
 img{
-  margin-top: 3%;
+  margin-top: 7%;
   width: 27rem;
 }
 
-
+article{
+  padding-top: 5%;
+}
 
 iframe{
   -ms-transform: scale(0.5);

@@ -7,20 +7,24 @@ body{
   padding-left: 10%;
 }
 
-.avatar-md{
-  width: 100px;
-  height: 100px;
+.container-fluid{
+  margin: 5% 10% 3% 10%;
 }
 
-table{
-  width: 80vw;
-  height: 70vh;
-  margin: 3vh 8% 3vh 8%;
+img{
+  width: 27rem;
 }
 
-td{
-  width: 18vw;
-  padding: 0;
-  text-align: center;
-  vertical-align: middle;
+article{
+  padding-top: 5%;
+}
+
+
+iframe{
+  -ms-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -o-transform: scale(0.5);
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  transform-origin: 0 0;
 }

@@ -106,4 +106,4 @@ This is like percentage. But I think vh is really useful when you just want to d
 
 ---
 
-There are already nice framework for responsive web design. I started RWD with Bootstrap. In time with Bootstrap, I understand more about RWD. Framework is convenient. With the above knowledge, I think we can easily customize.
+There are already nice framework for responsive web design. I started RWD with Bootstrap. In time with Bootstrap, I understand more about RWD and summarize these points here. I believe this is also a good way to start and learn RWD.

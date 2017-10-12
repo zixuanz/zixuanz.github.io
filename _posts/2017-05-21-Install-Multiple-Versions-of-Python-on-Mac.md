@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Install Multiple Versions of Python on Mac"
-category: Web
+category: Tool
 date: 2017-05-21
 tags: [Python, pyenv, pyenv-virtualenv, Mac, HomeBrew]
 ---

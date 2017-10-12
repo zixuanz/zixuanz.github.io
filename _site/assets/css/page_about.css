@@ -12,12 +12,10 @@ body{
 }
 
 img{
+  margin-top: 3%;
   width: 27rem;
 }
 
-article{
-  padding-top: 5%;
-}
 
 
 iframe{

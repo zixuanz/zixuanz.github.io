@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<head lang="en">
+  <title>Be Careful Order</title>
+  <meta name="author" content="zixuanz">
+  <meta name="description" content="My portfolio">
+
+  <!-- Required meta tags for bootstrap -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <!--Fonts Links-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!--Customized StyleSheet-->
+  <link rel="stylesheet" href="/assets/css/layout_page_post.css" type="text/css">
+  <link rel="stylesheet" href="/assets/css/blogs_style.css" type="text/css">
+  <link rel="stylesheet" href="/assets/css/include_all.css" type="text/css">
+</head>
+
+<html>
+  <body>
+    <!--Section Navbar-->
+    <div class="nav-divider sticky-top"></div>
+<div id="navbar" class="sticky-top">
+  <ul>
+    <li class="nav-item"><a href="/index.html" class="nav-link">Home</a></li>
+    <li class="nav-item"><a href="/projects.html" class="nav-link">Projects</a></li>
+    <li class="nav-item"><a href="/blogs.html" class="nav-link">Blogs</a></li>
+    <li class="nav-item"><a href="/about.html" class="nav-link">About</a></li>
+  </ul>
+</div>
+<!--
+<nav class="navbar navbar-toggleable-sm navbar-outline sticky-top">
+  <div class="collapse navbar-collapse" id="navbar_menu">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item"><a href="http://localhost:4000/index.html" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="http://localhost:4000/projects.html" class="nav-link">Projects</a></li>
+
+      <li class="nav-item"><a href="http://localhost:4000/blogs.html" class="nav-link">Blogs</a></li>
+      <li class="nav-item"><a href="http://localhost:4000/about.html" class="nav-link">About</a></li>
+    </ul>
+  </div>
+</nav>
+-->
+
+
+    <!--Section Jumbotron-->
+    <div class="jumbotron">
+      <div>
+        <h3>Be Careful Order</h3>
+        <p><small>Post Time: November 05, 2017</small></p>
+        <p>
+          <small>Category:</small>
+          <a class="category-style" href="/blogs.html#cat_">Web</a> |</span>
+          
+            <a class="tag-style" href="/blogs.html#tag_css">#CSS</a>
+          
+        </p>
+
+      </div>
+    </div>
+
+    <!--Main Area-->
+    <div class="container-fluid">
+      <div class="row">
+        <!--SubSection for Blog Content-->
+        <div class="col-md-8" id="blog_content">
+          <article class="p-5">
+            <p>Recently, I did a tiny work. And I had a trouble. It was somehow funny to me after I thought about it. Here is the situation.</p>
+
+<p>Since I need to apply different style or layout to the web application dynamically, there are several style sheets included. One of those is the common style sheet for global usage. I picked up one class from that common style sheet for a tag to just change the color of border. However, it did not work. I checked a lot and came up some assumptions such as</p>
+<ul>
+  <li>linked wrong path (even I believed that was not problem coz there is no error warning and I directly copied them from another page which works well.)</li>
+  <li>selector order in the common style sheet (even I do not think there are any conflicts coz each of class are independent.)</li>
+  <li>class order in class attribute of tag (even it does not matter but just for comforting myself.)</li>
+</ul>
+
+<p>Finally, I found out that actually I forgot checking the loading order of style sheet. The reason that I did not notice that since the other page linking the same style sheets all worked well. It implied to me there were nothing wrong how to include them. In other page, different class from different style sheets for one tag did not conflict. However, I defined border style and border color in different style sheets and load the common style sheet defining color before the another. According to the rule of loading web page and css order, finally the defined border color will be covered by the latest style.</p>
+
+<p>Each time I remind the assumptions when I tried to solve it, I just want to laugh. I even considered the last assumption but I forgot the most important one.</p>
+
+<p>Well, I list up a check list for css error checking.</p>
+
+<ol>
+  <li>
+    <p>Check the console in browser whether there is <strong>“ERR_FILE_NOT_FOUND”</strong> error. Not only style sheet, if other resource is missing, it also will display this error. Of course, before this error, it will indicate which resource is missing. When this error is happened, check path first. Not only the path in html file, but also check whether you put that linked style sheet in wrong folder.</p>
+  </li>
+  <li>
+    <p>Check whether the linked style sheet is exactly what you need. There may be the same name style sheet but in different folder.</p>
+  </li>
+  <li>
+    <p>Check the order of selectors in style sheet. You may write conflict style in different selectors. In this situation, the late style will be applied.</p>
+  </li>
+  <li>
+    <p>Check the order of internal and external style sheets. The loading sequence of web page is from top to bottom. So the style sheet will also be loaded in this order and follow the previous rule which is late style will be cascaded finally.</p>
+  </li>
+  <li>
+    <p>Check is there any inline style affect it. We know that when there are conflicts, css will be cascaded by this priority: <strong>inline style &gt; internal or external style sheet &gt; default</strong>.</p>
+  </li>
+  <li>
+    <p>Check style declared for multiple browser. Well, adapting web page style to different browser is tough. Make sure whether your browser support this declaration.</p>
+  </li>
+  <li>
+    <p>Check the related js script. Some js script may manage the style for tags. So please make sure whether these functions work well to add or remove style.</p>
+  </li>
+  <li>
+    <p>Make sure you really write correct style. I think it is always happened at beginning when we start css studying, which is the finally layout and style are not what we imagine. One reason is we are not so familiar with it yet. So please practice more!</p>
+  </li>
+</ol>
+
+<p>These are all I can summarize right now. It is too much for some situation but I think at least I will remind myself not miss any point.</p>
+
+          </article>
+        </div>
+
+        <!--SubSection for Blog Content-->
+        <div class="col-md-4 PageNavigation">
+          <div id="relative_blogs">
+            <div class="d-flex" id="prev_blog">
+              
+              <div class="triangle-left">
+              </div>
+              <div class="relative-box" style="border-radius: 0 0.2rem 0.2rem 0;">
+                <a class="prev align-middle" href="/blog/2017/10/01/Something-about-Responsive-Web-Design">Something about Responsive Web Design</a>
+              </div>
+              
+            </div>
+            <div class="d-flex" id="next_blog">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--Section Footer-->
+    <div>
+  <div class="footer-divider"></div>
+  <div class="text-center">
+    <div id="social_link">
+  <a target="_blank" href="https://github.com/zixuanz">
+    <i class="fa fa-github social-fa"></i>
+  </a>
+  <a target="_blank" href="https://www.linkedin.com/in/zixuan-zhao-425b03b6?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BTSmjWae8RMaUqDwarYh7eg%3D%3D">
+    <i class="fa fa-linkedin-square social-fa"></i>
+  </a>
+  <a target="_blank" href="#">
+    <i class="fa fa-file social-fa"></i>
+  </a>
+</div>
+
+    <p>Copyright © ZixuanZ 2017 </p>
+  </div>
+</div>
+
+
+  </body>
+</html>
